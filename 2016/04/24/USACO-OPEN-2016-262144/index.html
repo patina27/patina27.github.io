@@ -1,0 +1,683 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="title: USACO-OPEN-2016-262144date: 2016-04-24 00:57:54tags:[OI,USACO,DP]Description: “看了题解之后mengbi了，原来这么简单。但是为什么比赛的时候就是没有想到呢？大概是我DP的功力还是太浅了”
+
+DescriptionBessie likes downloading games to play on her">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Neologism">
+<meta property="og:url" content="http://hexo.patina27.net/2016/04/24/USACO-OPEN-2016-262144/index.html">
+<meta property="og:site_name" content="Neologism">
+<meta property="og:description" content="title: USACO-OPEN-2016-262144date: 2016-04-24 00:57:54tags:[OI,USACO,DP]Description: “看了题解之后mengbi了，原来这么简单。但是为什么比赛的时候就是没有想到呢？大概是我DP的功力还是太浅了”
+
+DescriptionBessie likes downloading games to play on her">
+<meta property="og:updated_time" content="2016-04-23T17:15:58.211Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Neologism">
+<meta name="twitter:description" content="title: USACO-OPEN-2016-262144date: 2016-04-24 00:57:54tags:[OI,USACO,DP]Description: “看了题解之后mengbi了，原来这么简单。但是为什么比赛的时候就是没有想到呢？大概是我DP的功力还是太浅了”
+
+DescriptionBessie likes downloading games to play on her">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title>  | Neologism </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Neologism</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Hexo @ Patina27</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-24T00:57:54+08:00" content="2016-04-24">
+              2016-04-24
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/24/USACO-OPEN-2016-262144/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/24/USACO-OPEN-2016-262144/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>title: USACO-OPEN-2016-262144<br>date: 2016-04-24 00:57:54<br>tags:[OI,USACO,DP]<br>Description: “看了题解之后mengbi了，原来这么简单。但是为什么比赛的时候就是没有想到呢？大概是我DP的功力还是太浅了”</p>
+<hr>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Bessie likes downloading games to play on her cell phone, even though she does find the small touch screen rather cumbersome to use with her large hooves.<br>She is particularly intrigued by the current game she is playing. The game starts with a sequence of N<br>N<br> positive integers ($2≤N≤262,144$), each in the range $1…40$. In one move, Bessie can take two adjacent numbers with equal values and replace them a single number of value one greater (e.g., she might replace two adjacent 7s with an 8). The goal is to maximize the value of the largest number present in the sequence at the end of the game. Please help Bessie score as highly as possible! </p>
+<h2 id="INPUT-FORMAT-file-262144-in"><a href="#INPUT-FORMAT-file-262144-in" class="headerlink" title="INPUT FORMAT (file 262144.in):"></a>INPUT FORMAT (file 262144.in):</h2><p>The first line of input contains N, and the next N lines give the sequence of N numbers at the start of the game. </p>
+<h2 id="OUTPUT-FORMAT-file-262144-out"><a href="#OUTPUT-FORMAT-file-262144-out" class="headerlink" title="OUTPUT FORMAT (file 262144.out):"></a>OUTPUT FORMAT (file 262144.out):</h2><p>Please output the largest integer Bessie can generate. </p>
+<h2 id="SAMPLE-INPUT"><a href="#SAMPLE-INPUT" class="headerlink" title="SAMPLE INPUT:"></a>SAMPLE INPUT:</h2><p>4<br>1<br>1<br>1<br>2</p>
+<h2 id="SAMPLE-OUTPUT"><a href="#SAMPLE-OUTPUT" class="headerlink" title="SAMPLE OUTPUT:"></a>SAMPLE OUTPUT:</h2><p>3</p>
+<p>In this example shown here, Bessie first merges the second and third 1s to obtain the sequence 1 2 2, and then she merges the 2s into a 3. Note that it is not optimal to join the first two 1s. </p>
+<h2 id="Sol"><a href="#Sol" class="headerlink" title="Sol"></a>Sol</h2><p>考场上我用区间DP得了样例分（囧  </p>
+<p>通过计算器计算，我们可以发现，$262144 \= 2^18 $<br>那么这样的话很明显是用类似倍增之类的手段处理。</p>
+<p>这里有一个非常巧妙的建模方法：<br>$f[p][i]$表示从i为起点，最大值为P的终点的值（无法实现即为-1）<br>则有递推方程式：<br>f[p+1][i] = f[p][f[p][i]+1]</p>
+<p>问题迎刃而解。</p>
+<h2 id="Origin-Sol"><a href="#Origin-Sol" class="headerlink" title="Origin Sol"></a>Origin Sol</h2><p>(Analysis by Mark Gordon)<br>A simple way to approach this problem would be to consider all ranges of the input array and determine the largest number that can be produced in that range. However, most ranges aren’t actually interesting as they could never be combined into one. </p>
+<p>To see this it helps to look at the equivalent problem where each of the array elements are powers of two and instead of combining x and x to produce x + 1 you produced 2x. Now it’s clear that a range must sum to a power of two to be interesting. In fact, an interesting range can be better described by its starting position and the power of two it sums to. </p>
+<p>This informs a simple Dynamic Programming solution. We let DP[p][i] give the ending index of the range starting at i that can combine to p, or -1 if it doesn’t exist. DP[p + 1][i] is then calculated as DP[p + 1][i] = DP[p][DP[p][i]] provided DP[p][i] is valid. </p>
+<p>Here’s my solution to this problem. </p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code>&lt;span class=&quot;hljs-comment&quot;&gt;#include &lt;iostream&gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;#include &lt;cstdio&gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;#include &lt;vector&gt;&lt;/span&gt;
+
+&lt;span class=&quot;hljs-keyword&quot;&gt;using&lt;/span&gt; namespace std;
+
+&lt;span class=&quot;hljs-comment&quot;&gt;#define MAXN ((1 &lt;&lt; 18) + 10)&lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;#define MAXSZ 70&lt;/span&gt;
+
+&lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; dp[&lt;span class=&quot;hljs-type&quot;&gt;MAXSZ&lt;/span&gt; + &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;][&lt;span class=&quot;hljs-type&quot;&gt;MAXN&lt;/span&gt;];
+&lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; A[&lt;span class=&quot;hljs-type&quot;&gt;MAXN&lt;/span&gt;];
+
+&lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; main() {
+  &lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; N; cin &gt;&gt; N;
+
+  vector&lt;&lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt;&gt; A(N);
+  &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;; i &lt; N; i++) {
+    cin &gt;&gt; A[i];
+  }
+
+  &lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;hljs-literal&quot;&gt;result&lt;/span&gt; = &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;
+  &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;; i &lt;= &lt;span class=&quot;hljs-type&quot;&gt;MAXSZ&lt;/span&gt;; i++) {
+    &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; j = &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;; j &lt; N; j++) {
+      &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (A[j] == i) {
+        dp[i][j] = j + &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;;
+        &lt;span class=&quot;hljs-literal&quot;&gt;result&lt;/span&gt; = max(&lt;span class=&quot;hljs-literal&quot;&gt;result&lt;/span&gt;, i);
+      } &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
+        &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (i == &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; || dp[i - &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;][j] == -&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt; || dp[i - &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;][dp[i - &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;][j]] == -&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;) {
+          dp[i][j] = -&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;;
+        } &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; {
+          dp[i][j] = dp[i - &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;][dp[i - &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;][j]];
+          &lt;span class=&quot;hljs-literal&quot;&gt;result&lt;/span&gt; = max(&lt;span class=&quot;hljs-literal&quot;&gt;result&lt;/span&gt;, i);
+        }
+      }
+    }
+    dp[i][N] = -&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;;
+  }
+  cout &lt;&lt; &lt;span class=&quot;hljs-literal&quot;&gt;result&lt;/span&gt; &lt;&lt; endl;
+
+  &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;
+}
+</code></pre>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/23/77/" rel="next" title="[网络流24题] 太空飞行计划">
+                <i class="fa fa-chevron-left"></i> [网络流24题] 太空飞行计划
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Patina27" />
+          <p class="site-author-name" itemprop="name">Patina27</p>
+          <p class="site-description motion-element" itemprop="description">Cease to struggle and you cease to live.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iissnan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/patinagold" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element">
+            <div class="links-of-blogroll-title">
+              <i class="fa fa-globe fa-fw"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://i301void.tk/" title="i301void" target="_blank">i301void</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.fractal128.tk/" title="fractal128" target="_blank">fractal128</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INPUT-FORMAT-file-262144-in"><span class="nav-number">2.</span> <span class="nav-text">INPUT FORMAT (file 262144.in):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OUTPUT-FORMAT-file-262144-out"><span class="nav-number">3.</span> <span class="nav-text">OUTPUT FORMAT (file 262144.out):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAMPLE-INPUT"><span class="nav-number">4.</span> <span class="nav-text">SAMPLE INPUT:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAMPLE-OUTPUT"><span class="nav-number">5.</span> <span class="nav-text">SAMPLE OUTPUT:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sol"><span class="nav-number">6.</span> <span class="nav-text">Sol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Origin-Sol"><span class="nav-number">7.</span> <span class="nav-text">Origin Sol</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">7.1.</span> <span class="nav-text">Code</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Patina27</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'patina27hexo';
+      var disqus_identifier = '2016/04/24/USACO-OPEN-2016-262144/';
+      var disqus_title = '';
+      var disqus_url = 'http://hexo.patina27.net/2016/04/24/USACO-OPEN-2016-262144/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
