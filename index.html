@@ -14,6 +14,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Neologism">
 <meta name="twitter:description">
+<meta name="twitter:creator" content="@patina27">
+<link rel="publisher" href="patina27">
   
     <link rel="alternate" href="/atom.xml" title="Neologism" type="application/atom+xml">
   
@@ -57,7 +59,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -90,7 +92,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>W 教授正在为国家航天中心计划一系列的太空飞行。每次太空飞行可进行一系列商业性实验而获取利润。现已确定了一个可供选择的实验集合E={E1,E2,…,Em}，和进行这些实验需要使用的全部仪器的集合I={ I1, I2,…,In }。实验Ej 需要用到的仪器是I的子集Rj∈I。配置仪器Ik 的费用为ck 美元。实验Ej 的赞助商已同意为该实验结果支付pj 美元。W教授的任务是找出一个有效算法，确定在一次太空飞行中要进行哪些实验并因此而配置哪些仪器才能使太空飞行的净收益最大。这里净收益是指进行实验所获得的全部收入与配置仪器的全部费用的差额。</p>
+        <a id="more"></a> 
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>W 教授正在为国家航天中心计划一系列的太空飞行。每次太空飞行可进行一系列商业性实验而获取利润。现已确定了一个可供选择的实验集合E={E1,E2,…,Em}，和进行这些实验需要使用的全部仪器的集合I={ I1, I2,…,In }。实验Ej 需要用到的仪器是I的子集Rj∈I。配置仪器Ik 的费用为ck 美元。实验Ej 的赞助商已同意为该实验结果支付pj 美元。W教授的任务是找出一个有效算法，确定在一次太空飞行中要进行哪些实验并因此而配置哪些仪器才能使太空飞行的净收益最大。这里净收益是指进行实验所获得的全部收入与配置仪器的全部费用的差额。</p>
 <h2 id="编程任务"><a href="#编程任务" class="headerlink" title="编程任务"></a>编程任务</h2><p>对于给定的实验和仪器配置情况，编程找出净收益最大的试验计划。</p>
 <h2 id="数据输入"><a href="#数据输入" class="headerlink" title="数据输入"></a>数据输入</h2><p>第1行有2个正整数m和n(m,n &lt;= 100)。m是实验数，n是仪器数。接下来的m行，每行是一个实验的有关数据。第一个数赞助商同意支付该实验的费用；接着是该实验需要用到的若干仪器的编号。最后一行的n个数是配置每个仪器的费用。</p>
 <h2 id="结果输出"><a href="#结果输出" class="headerlink" title="结果输出"></a>结果输出</h2><p>第1行是实验编号；第2行是仪器编号；最后一行是净收益。</p>
@@ -101,7 +104,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/23/77/" data-id="cincudcj60007nkv93hecip51" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2016/04/23/77/" data-id="cincudcj60007nkv93hecip51" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OI/">OI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络流/">网络流</a></li></ul>
@@ -135,7 +138,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Byteland的网络是由n个服务器和m条光纤组成的，每条光纤连接了两个服务器并且可以双向输送信息。这个网络中有两个特殊的服务器，一个连接到了全球的网络，一个连接到了总统府，它们的编号分别是1和N.</p>
+        <a id="more"></a> 
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Byteland的网络是由n个服务器和m条光纤组成的，每条光纤连接了两个服务器并且可以双向输送信息。这个网络中有两个特殊的服务器，一个连接到了全球的网络，一个连接到了总统府，它们的编号分别是1和N.</p>
 <p>最近一家叫做Max Traffic的公司决定控制几条网络中的光纤，以使他们能够掌握总统府的的上网记录。为了到达这个目的，他们需要使所有从1号服务器到N号服务器的数据都经过至少一条他们所掌握的线路。</p>
 <p>为了把这个计划付诸于行动，他们需要从这些线路的拥有者手中购买线路，每条线路都有对应的花费。自从公司的主要业务部是间谍活动而是家用宽带以后，经理就希望尽可能少的花费和尽可能高的回报。因此我们要使购买线路的平均值最小。</p>
 <p>如果我们购买了k条线路，花费了c元，我们希望找到使c/k最小的方案。  </p>
@@ -154,7 +158,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/23/76/" data-id="cincudcj10004nkv9nvyorwrh" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2016/04/23/76/" data-id="cincudcj10004nkv9nvyorwrh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OI/">OI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分数规划/">分数规划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络流/">网络流</a></li></ul>
@@ -193,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/23/migration/" data-id="cincudcj30006nkv9t12616ma" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2016/04/23/migration/" data-id="cincudcj30006nkv9t12616ma" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OI/">OI</a></li></ul>
@@ -227,7 +231,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>假设有n根柱子，现要按下述规则在这n根柱子中依次放入编号为 1，2，3，4……的球。<br>（1）每次只能在某根柱子的最上面放球。<br>（2）在同一根柱子中，任何2个相邻球的编号之和为完全平方数。<br>试设计一个算法，计算出在n根柱子上最多能放多少个球。例如，在4 根柱子上最多可<br>放11个球。<br>编程任务：<br>对于给定的n，计算在 n根柱子上最多能放多少个球。  </p>
+        <a id="more"></a> 
+<h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>假设有n根柱子，现要按下述规则在这n根柱子中依次放入编号为 1，2，3，4……的球。<br>（1）每次只能在某根柱子的最上面放球。<br>（2）在同一根柱子中，任何2个相邻球的编号之和为完全平方数。<br>试设计一个算法，计算出在n根柱子上最多能放多少个球。例如，在4 根柱子上最多可<br>放11个球。<br>编程任务：<br>对于给定的n，计算在 n根柱子上最多能放多少个球。  </p>
 <h2 id="数据输入："><a href="#数据输入：" class="headerlink" title="数据输入："></a>数据输入：</h2><p>文件第1 行有 1个正整数n，表示柱子数。</p>
 <h2 id="结果输出"><a href="#结果输出" class="headerlink" title="结果输出:"></a>结果输出:</h2><p>文件的第一行是球数。</p>
 <h2 id="数据规模"><a href="#数据规模" class="headerlink" title="数据规模"></a>数据规模</h2><p>n&lt;=60  保证答案小于1600</p>
@@ -242,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/23/74/" data-id="cincudciv0001nkv9pkxx8g3q" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2016/04/23/74/" data-id="cincudciv0001nkv9pkxx8g3q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OI/">OI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二分图/">二分图</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络流/">网络流</a></li></ul>
@@ -276,7 +281,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>对于一个软件公司来说，在发行一个新软件之后，可以说已经完成了工作。但是实际上，许多软件公司在发行一个新产品之后，还经常发送补丁程序，修改原产品中的错误(当然，有些补丁是要收费的)。<br>如某微硬公司就是这样的一个软件公司。今年夏天，在发行了一个新的字处理软件之后，到现在他们已经编写了许多补丁程序。仅仅在这个周末，他们就用新编写的补丁程序解决了软件中的一个大问题。而在每一个补丁程序修改软件中的某些错误时，有可能引起软件中原来存在的某些错误重新发作。发生这种情况是因为当修改一个错误时，补丁程序利用了程序中约定的特别行为，从而导致错误的重新产生。<br>微硬公司在他们的软件中一共发现了n个错误B={bl，b2，…，bn)，现在他们一共发送了m 个补丁程序p1,p2，…,pm。如果想要在软件中应用第pi号补丁程序，则软件中必须存在错误B+i ≤B，并且错误B-i≤B必须不存在(显然，B+i∩B-i为空集)。然后，这个补丁程序将改正错误 F-i≤B(如果错误存在的话)，并且产生新错误F+i≤B(同样，F+i∩F-i也为空集)。<br>现在，微硬公司的问题只有一个。他们给出一个原始版本的软件，软件包含了B中的所有错误，然后按照某一顺序在软件中应用补丁程序(应用某个补丁程序时，软件必须符合该补丁程序的应用条件，且运行该程序需要一定的时间)。问怎样才能最快地改正软件中的所有错误(即为修正所有错误而运行的补丁程序的总时间最短)?</p>
+        <a id="more"></a> 
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>对于一个软件公司来说，在发行一个新软件之后，可以说已经完成了工作。但是实际上，许多软件公司在发行一个新产品之后，还经常发送补丁程序，修改原产品中的错误(当然，有些补丁是要收费的)。<br>如某微硬公司就是这样的一个软件公司。今年夏天，在发行了一个新的字处理软件之后，到现在他们已经编写了许多补丁程序。仅仅在这个周末，他们就用新编写的补丁程序解决了软件中的一个大问题。而在每一个补丁程序修改软件中的某些错误时，有可能引起软件中原来存在的某些错误重新发作。发生这种情况是因为当修改一个错误时，补丁程序利用了程序中约定的特别行为，从而导致错误的重新产生。<br>微硬公司在他们的软件中一共发现了n个错误B={bl，b2，…，bn)，现在他们一共发送了m 个补丁程序p1,p2，…,pm。如果想要在软件中应用第pi号补丁程序，则软件中必须存在错误B+i ≤B，并且错误B-i≤B必须不存在(显然，B+i∩B-i为空集)。然后，这个补丁程序将改正错误 F-i≤B(如果错误存在的话)，并且产生新错误F+i≤B(同样，F+i∩F-i也为空集)。<br>现在，微硬公司的问题只有一个。他们给出一个原始版本的软件，软件包含了B中的所有错误，然后按照某一顺序在软件中应用补丁程序(应用某个补丁程序时，软件必须符合该补丁程序的应用条件，且运行该程序需要一定的时间)。问怎样才能最快地改正软件中的所有错误(即为修正所有错误而运行的补丁程序的总时间最短)?</p>
 <h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>数据存放在当前目录下的文本文件“bugs.in””中。<br>文件的第一行包含两个整数n和m，分别表示软件中的错误个数和发送的补丁个数。其中，n和m满足条件：1≤n≤20，1≤m≤100。<br>接下来的m行(即第2行至第m+1行)按顺序描述了m个补丁程序的情况，第i行描述第i-1号补丁程序。每一行包含一个整数(表示在软件中应用该补丁程序所需的时间，单位为秒)和两个n个字符的字符串(中间均用一个空格分开)。、<br>第一个字符串描述了应用该补丁程序(第i-1号)的条件，即说明在软件中某错误应该存在还是不应该存在。字符串的第i个字符，如果是“+”，表示在软件中必须存在bi号错误；如果是“-”，表示软件中错误bi不能存在；如果是“0””，则表示错误bi存在或不存在均可(即对应用该补丁程序没有影响)。<br>第二个字符串描述了应用该补丁程序(第i-1号)后的效果，即应用补丁程序后，哪些错误被修改好了，而又产生了哪些新错误。字符串的第i个字符，如果是“+”，表示产生了一个新错误bi；如果是“-”，表示错误bi被修改好了；如果是“0”，则表示错误bi不变(即原来存在，则仍然存在；原来不存在，则也不存在)。  </p>
 <h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>答案输出在当前目录下的文本文件“bugs.out””中。<br>请你找到一个应用补丁程序的最优顺序，修改软件中的所有错误，并且所用的时间最少。<br>注意，每个补丁程序是可以应用多次的。<br>如果存在这样一个序列，请在输出文件的第一行输出应用补丁程序的总时间(单位为秒)；如果找不到这样一个序列，请在输出文件的第一行输出-1。  </p>
 <h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p>样例输入（bugs.in）:<br>3 3<br>1 000 00-<br>1 00- 0-+<br>2 0– -++<br>样例输出（bugs.out）：<br>8 </p>
@@ -286,7 +292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/23/75/" data-id="cincudcj00003nkv9yiz9arwm" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2016/04/23/75/" data-id="cincudcj00003nkv9yiz9arwm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OI/">OI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最短路/">最短路</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/状态压缩/">状态压缩</a></li></ul>
@@ -333,7 +339,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/23/hello-world/" data-id="cincudcj80009nkv95hz88q7i" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2016/04/23/hello-world/" data-id="cincudcj80009nkv95hz88q7i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -365,7 +371,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>飞行大队有若干个来自各地的驾驶员，专门驾驶一种型号的飞机，这种飞机每架有两个驾驶员,需一个正驾驶员和一个副驾驶员。由于种种原因，例如相互配合的问题，有些驾驶员不能在同一架飞机上飞行，问如何搭配驾驶员才能使出航的飞机最多。</p>
+        <a id="more"></a> 
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>飞行大队有若干个来自各地的驾驶员，专门驾驶一种型号的飞机，这种飞机每架有两个驾驶员,需一个正驾驶员和一个副驾驶员。由于种种原因，例如相互配合的问题，有些驾驶员不能在同一架飞机上飞行，问如何搭配驾驶员才能使出航的飞机最多。</p>
 <p>假设有10个驾驶员，其中V1, V2, V3, V4, V5是正驾驶员，V6, V7, V8, V9 , V10是副驾驶员。如果一个正驾驶员和一个副驾驶员可以同机飞行，就在代表他们两个之间连一条线,两个人不能同机飞行，就不连。例如V1和V7可以同机飞行，而V1和V8就不行。请搭配飞行员，使出航的飞机最多。注意:因为驾驶工作分工严格,两个正驾驶员或两个副驾驶员都不能同机飞行.</p>
 <h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入文件有若干行<br>第一行，两个整数n与n1，表示共有n个飞行员(2&lt;=n&lt;=100),其中有n1名飞行员是正驾驶员.<br>下面有若干行,每行有2个数字a,b。表示正驾驶员a和副驾驶员b可以同机飞行。<br>注:正驾驶员的编号在前,即正驾驶员的编号小于副驾驶员的编号.  </p>
 <h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出文件有一行<br>第一行，1个整数，表示最大起飞的飞机数。  </p>
@@ -374,7 +381,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/23/73/" data-id="cincudcip0000nkv9v6d0b00z" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2016/04/23/73/" data-id="cincudcip0000nkv9v6d0b00z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OI/">OI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二分图/">二分图</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二分图匹配/">二分图匹配</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络流/">网络流</a></li></ul>
@@ -392,19 +399,6 @@
           <aside id="sidebar">
   
     
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Labels</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/OI/">OI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图/">二分图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图匹配/">二分图匹配</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分数规划/">分数规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/状态压缩/">状态压缩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流/">网络流</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
@@ -415,9 +409,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li></ul>
     </div>
   </div>
 
@@ -425,7 +419,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
