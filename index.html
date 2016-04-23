@@ -269,16 +269,12 @@
 
       
         
-          
-            <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>W 教授正在为国家航天中心计划一系列的太空飞行。每次太空飞行可进行一系列商业性实验而获取利润。现已确定了一个可供选择的实验集合E={E1,E2,…,Em}，和进行这些实验需要使用的全部仪器的集合I={ I1, I2,…,In }。实验Ej 需要用到的仪器是I的子集Rj∈I。配置仪器Ik 的费用为ck 美元。实验Ej 的赞助商已同意为该实验结果支付pj 美元。W教授的任务是找出一个有效算法，确定在一次太空飞行中要进行哪些实验并因此而配置哪些仪器才能使太空飞行的净收益最大。这里净收益是指进行实验所获得的全部收入与配置仪器的全部费用的差额。</p>
-<h2 id="编程任务"><a href="#编程任务" class="headerlink" title="编程任务"></a>编程任务</h2><p>对于给定的实验和仪器配置情况，编程找出净收益最大的试验计划。</p>
-<h2 id="数据输入"><a href="#数据输入" class="headerlink" title="数据输入"></a>数据输入</h2><p>第1行有2个正整数m和n(m,n &lt;= 100)。m是实验数，n是仪器数。接下来的m行，每行是一个实验的有关数据。第一个数赞助商同意支付该实验的费用；接着是该实验需要用到的若干仪器的编号。最后一行的n个数是配置每个仪器的费用。</p>
-<h2 id="结果输出"><a href="#结果输出" class="headerlink" title="结果输出"></a>结果输出</h2><p>第1行是实验编号；第2行是仪器编号；最后一行是净收益。</p>
-<h2 id="输入文件示例-shuttle-in"><a href="#输入文件示例-shuttle-in" class="headerlink" title="输入文件示例 shuttle.in"></a>输入文件示例 shuttle.in</h2><p>2 3<br>10 1 2<br>25 2 3<br>5 6 7</p>
-<h2 id="输出文件示例-shuttle-out"><a href="#输出文件示例-shuttle-out" class="headerlink" title="输出文件示例 shuttle.out"></a>输出文件示例 shuttle.out</h2><p>1 2<br>1 2 3<br>17</p>
-<h2 id="Sol"><a href="#Sol" class="headerlink" title="Sol"></a>Sol</h2><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">#include &lt;queue&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">#define maxn 410</span><br><span class="line">#define maxm 20000</span><br><span class="line">#define S 0</span><br><span class="line">#define T 400</span><br><span class="line">#define INF 1000000007</span><br><span class="line">#define d(i) i + 150</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct Edge</span><br><span class="line">&#123;</span><br><span class="line">	int v, f, l, nex, w;</span><br><span class="line">&#125;ed[maxm];</span><br><span class="line">int n, m, dis[maxn], e, fir[maxn];</span><br><span class="line"></span><br><span class="line">int addedge(int u, int v, int f, int l)&#123;</span><br><span class="line">	ed[++e].v = v;</span><br><span class="line">	ed[e].f = f;</span><br><span class="line">	ed[e].w = f;</span><br><span class="line">	ed[e].l = e+l;</span><br><span class="line">	ed[e].nex = fir[u];</span><br><span class="line">	fir[u] = e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">queue &lt;int&gt; q;</span><br><span class="line">bool bfs()&#123;</span><br><span class="line">	memset(dis, -1, sizeof dis);</span><br><span class="line">	while (!q.empty()) q.pop();</span><br><span class="line">	q.push(S);</span><br><span class="line">	dis[S] = 0;</span><br><span class="line">	while (!q.empty()) &#123;</span><br><span class="line">		int u = q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		for (int i = fir[u]; i; i = ed[i].nex) &#123;</span><br><span class="line">			int v = ed[i].v;</span><br><span class="line">			if (ed[i].f &amp;&amp; dis[v] == -1)&#123;</span><br><span class="line">				dis[v] = dis[u] + 1;</span><br><span class="line">				if (v==T) return true;</span><br><span class="line">				q.push(v);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return false;</span><br><span class="line">&#125;</span><br><span class="line">int finds(int u, int maxflow = INF)&#123;</span><br><span class="line">	int flow;</span><br><span class="line">	if (u == T) return maxflow;</span><br><span class="line">	for (int i = fir[u]; i; i = ed[i].nex)&#123;</span><br><span class="line">		int v = ed[i].v;</span><br><span class="line">		if (ed[i].f &amp;&amp; dis[v] == dis[u] + 1 &amp;&amp; (flow = finds(v, min(maxflow, ed[i].f)))  )&#123;</span><br><span class="line">			ed[i].f -= flow;</span><br><span class="line">			ed[ed[i].l].f += flow;</span><br><span class="line">			return flow;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line">int dinic()&#123;</span><br><span class="line">	int cnt = 0, flow;</span><br><span class="line">	while (bfs()) &#123;</span><br><span class="line">			while (flow = finds(S)) &#123;</span><br><span class="line">			cnt += flow;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool bo[maxn];</span><br><span class="line">void dfs(int u)&#123;</span><br><span class="line">	bo[u] = true;</span><br><span class="line">	for (int i = fir[u]; i; i = ed[i].nex)&#123;</span><br><span class="line">		int v = ed[i].v;</span><br><span class="line">		if (ed[i].f &amp;&amp; !bo[v]) &#123;</span><br><span class="line">			bo[v] = true;</span><br><span class="line">			dfs(v);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void getNum(int u, char s[])&#123;</span><br><span class="line">	int x = 0, i = 0;</span><br><span class="line">	for (i = 0; i &lt;= strlen(s); i++)&#123;</span><br><span class="line">		if (s[i] &gt;= &apos;0&apos; &amp;&amp; s[i] &lt;=&apos;9&apos;) x = x * 10 + s[i] -&apos;0&apos;;</span><br><span class="line">		else &#123;</span><br><span class="line">			addedge(S, u, x, 1);</span><br><span class="line">			addedge(u, S, 0, -1);</span><br><span class="line">			x = 0;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	for (i++; i &lt;= strlen(s); i++)&#123;</span><br><span class="line">		if (s[i] &gt;= &apos;0&apos; &amp;&amp; s[i] &lt;=&apos;9&apos;) x = x * 10 + s[i] -&apos;0&apos;;</span><br><span class="line">		else &#123;</span><br><span class="line">			addedge(u, d(x), INF, 1);</span><br><span class="line">			addedge(d(x), u, 0, -1);</span><br><span class="line">			x = 0;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int ans1[maxn], ans2[maxn], a1 = 0, a2 = 0, ans = 0;</span><br><span class="line">int main()&#123;</span><br><span class="line">freopen(&quot;&quot;shuttle.in&quot;&quot;, &quot;&quot;r&quot;&quot;, stdin);</span><br><span class="line">freopen(&quot;&quot;shuttle.out&quot;&quot;, &quot;&quot;w&quot;&quot;, stdout);</span><br><span class="line">	scanf(&quot;&quot;%d%d\n&quot;&quot;, &amp;m, &amp;n);</span><br><span class="line">	char str[1001];</span><br><span class="line">	for (int i = 1; i &lt;= m; i++)&#123;</span><br><span class="line">		gets(str);</span><br><span class="line">		getNum(i, str);</span><br><span class="line">	&#125;</span><br><span class="line">	for (int i = 1; i &lt;= n; i++)&#123;</span><br><span class="line">		int c;</span><br><span class="line">		scanf(&quot;&quot;%d&quot;&quot;, &amp;c);</span><br><span class="line">		addedge(d(i), T, c, 1);</span><br><span class="line">		addedge(T, d(i), 0, -1);</span><br><span class="line">	&#125;</span><br><span class="line">	dinic();</span><br><span class="line">	dfs(S);</span><br><span class="line"></span><br><span class="line">	for (int i = fir[S]; i; i = ed[i].nex)&#123;</span><br><span class="line">		int v = ed[i].v;</span><br><span class="line">		if (bo[v]) &#123; ans += ed[i].w; ans1[++a1] = v; &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	for (int i = fir[T]; i; i = ed[i].nex)&#123;</span><br><span class="line">		int v = ed[i].v;</span><br><span class="line">		if (bo[v]) &#123;ans -= ed[ed[i].l].w; ans2[++a2] = v; &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(ans1+1, ans1+a1+1);</span><br><span class="line">	sort(ans2+1, ans2+a2+1);</span><br><span class="line">	for (int i = 1; i &lt;= a1; i++) printf(&quot;&quot;%d &quot;&quot;, ans1[i]);</span><br><span class="line">	printf(&quot;&quot;\n&quot;&quot;);</span><br><span class="line">	for (int i = 1; i &lt;= a2; i++) printf(&quot;&quot;%d &quot;&quot;, ans2[i] - 150);</span><br><span class="line">	printf(&quot;&quot;\n&quot;&quot;); </span><br><span class="line">	printf(&quot;&quot;%d\n&quot;&quot;, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
+          <p>忘了写Sol，现在自己看不懂了orz<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/23/77/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -376,126 +372,12 @@
 
       
         
-          
-            <a id="more"></a> 
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Byteland的网络是由n个服务器和m条光纤组成的，每条光纤连接了两个服务器并且可以双向输送信息。这个网络中有两个特殊的服务器，一个连接到了全球的网络，一个连接到了总统府，它们的编号分别是1和N.</p>
-<p>最近一家叫做Max Traffic的公司决定控制几条网络中的光纤，以使他们能够掌握总统府的的上网记录。为了到达这个目的，他们需要使所有从1号服务器到N号服务器的数据都经过至少一条他们所掌握的线路。</p>
-<p>为了把这个计划付诸于行动，他们需要从这些线路的拥有者手中购买线路，每条线路都有对应的花费。自从公司的主要业务部是间谍活动而是家用宽带以后，经理就希望尽可能少的花费和尽可能高的回报。因此我们要使购买线路的平均值最小。</p>
-<p>如果我们购买了k条线路，花费了c元，我们希望找到使c/k最小的方案。  </p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>多组数据，每组数据第一行是两个整数n和m（1&lt;=n&lt;=100,1&lt;=m&lt;=400),代表服务器的个数和线路数</p>
-<p>之后的m行，每行三个整数a，b，c，分别代表了这条线路所连接的服务器和购买这条线路的花费，花费都是正数且不会超过10^7</p>
-<p>没有自边，没有重边，保证任意两点都是连通的。</p>
-<p>最后一行为两个0  </p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>每组数据的第一行是一个整数k，代表购买多少条线路</p>
-<p>之后k个整数，代表购买线路的编号，编号是它们在输入文件被给处的顺序</p>
-<p>每组数据之间有一个空行  </p>
-<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><p>6 8<br>1 2 3<br>1 3 2<br>2 4 2<br>2 5 2<br>3 4 2<br>3 5 2<br>5 6 3<br>4 6 3<br>4 5<br>1 2 2<br>1 3 2<br>2 3 1<br>2 4 2<br>3 4 2<br>0 0</p>
-<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><p>4<br>3 4 5 6</p>
-<p>3<br>1 2 3</p>
-<h2 id="Sol"><a href="#Sol" class="headerlink" title="Sol"></a>Sol</h2><p>网络流+分数规划例题，详见《最小割模型在信息学奥赛中的应用》<br>写了好久orz</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">#include &lt;queue&gt;</span><br><span class="line">#include &lt;cmath&gt;</span><br><span class="line">#define Eps 1e-6</span><br><span class="line">#define INF 1000000007</span><br><span class="line">using namespace std;</span><br><span class="line">#define maxn 410</span><br><span class="line">#define maxm 1610</span><br><span class="line">int x[maxm], y[maxm];</span><br><span class="line">float z[maxm];</span><br><span class="line">int S = 1, T, n, m;</span><br><span class="line">struct Edge</span><br><span class="line">&#123;</span><br><span class="line">    int u, v, l, nex;</span><br><span class="line">    float f;</span><br><span class="line">&#125;ed[maxm];</span><br><span class="line">int fir[maxn], e = 0;</span><br><span class="line">void addedge(int u, int v, float f, int l)&#123;</span><br><span class="line">    ed[++e].v = v;</span><br><span class="line">    ed[e].u = u;</span><br><span class="line">    ed[e].f = f;</span><br><span class="line">    ed[e].l = e + l;</span><br><span class="line">    ed[e].nex = fir[u];</span><br><span class="line">    fir[u] = e;</span><br><span class="line">&#125;</span><br><span class="line">queue &lt;int&gt; q;</span><br><span class="line">int dis[maxn];</span><br><span class="line">bool bfs()&#123;</span><br><span class="line">    memset(dis, -1, sizeof dis);</span><br><span class="line">    q.push(S);</span><br><span class="line">    dis[S] = 0;</span><br><span class="line">    while (!q.empty())&#123;</span><br><span class="line">        int u = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        for (int i = fir[u]; i; i = ed[i].nex) &#123;</span><br><span class="line">            int v = ed[i].v;</span><br><span class="line">            if (fabs(ed[i].f) &gt; Eps &amp;&amp; dis[v] == -1) &#123;</span><br><span class="line">                dis[v] = dis[u] + 1;</span><br><span class="line">                q.push(v);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (dis[T] != -1) return true;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">float find(int u, float mf = INF)&#123;</span><br><span class="line">    if (u == T) return mf;</span><br><span class="line">    float flow = 0;</span><br><span class="line">    for (int i = fir[u]; i; i = ed[i].nex) &#123;</span><br><span class="line">        int v = ed[i].v;</span><br><span class="line">        if (fabs(ed[i].f) &gt; Eps &amp;&amp; dis[v] == dis[u] + 1 &amp;&amp; ( fabs(flow = find(v, min(mf, ed[i].f))) &gt; Eps )) &#123;</span><br><span class="line">            ed[i].f -= flow;</span><br><span class="line">            ed[ed[i].l].f += flow;</span><br><span class="line">            return flow;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool vis[maxn];</span><br><span class="line">void dfs(int u)&#123;</span><br><span class="line">    int i, v;</span><br><span class="line">    for (int i = fir[u]; i; i = ed[i].nex) &#123;</span><br><span class="line">        v = ed[i].v;</span><br><span class="line">        if (vis[v] || fabs(ed[i].f) &lt; Eps) continue;</span><br><span class="line">        vis[v] = true;</span><br><span class="line">        dfs(v);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">float dinic()&#123;</span><br><span class="line">    float ret = 0, flow = 0;</span><br><span class="line">    while (bfs()) &#123;</span><br><span class="line">        while (fabs(flow = find(S)) &gt; Eps) &#123;</span><br><span class="line">            ret += flow;</span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">    return ret;</span><br><span class="line">&#125;</span><br><span class="line">int num = 0;</span><br><span class="line">int map[maxn][maxn];</span><br><span class="line">bool flag[maxn];</span><br><span class="line"></span><br><span class="line">bool MAIN()&#123;</span><br><span class="line">    scanf(&quot;&quot;%d%d&quot;&quot;, &amp;n, &amp;m);</span><br><span class="line">    if (n == 0 &amp;&amp; m == 0) return false;</span><br><span class="line">    T = n; num = 0;</span><br><span class="line">    float l = 0, r = 0;</span><br><span class="line">    for (int i = 1; i &lt;= m; i++)&#123;</span><br><span class="line">        scanf(&quot;&quot;%d%d%f&quot;&quot;, &amp;x[i], &amp;y[i], &amp;z[i]);</span><br><span class="line">        map[x[i]][y[i]] = i;</span><br><span class="line">        map[y[i]][x[i]] = i;</span><br><span class="line">        r += z[i];</span><br><span class="line">    &#125;</span><br><span class="line">    float R = 0;</span><br><span class="line">    while (r - l &gt;= Eps) &#123;</span><br><span class="line">        float L = (l + r) / 2.0;</span><br><span class="line">        e = 0; memset(fir, 0, sizeof fir); memset(ed, 0, sizeof ed); memset(flag, 0, sizeof flag);           </span><br><span class="line">        float ans = 0;</span><br><span class="line">        num = 0;</span><br><span class="line">        for (int i = 1; i &lt;= m; i++)&#123;</span><br><span class="line">            float w = z[i] - L;</span><br><span class="line"></span><br><span class="line">            if (w &lt; 0) &#123;</span><br><span class="line">                ans += w;</span><br><span class="line">                flag[i] = true;</span><br><span class="line">                num++;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            addedge(x[i], y[i], w, 1);            </span><br><span class="line">            addedge(y[i], x[i], w, 1);</span><br><span class="line">        &#125;</span><br><span class="line">        float x = dinic();</span><br><span class="line">        ans += x;</span><br><span class="line">        if (fabs(ans) &lt; Eps) &#123;</span><br><span class="line">            R = L;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        if (ans &gt; 0) l = L; else r = L;  </span><br><span class="line">    &#125;   </span><br><span class="line">    memset(vis, 0, sizeof vis);</span><br><span class="line">    vis[S] = true;</span><br><span class="line">    dfs(S);</span><br><span class="line">    for (int i = 1; i &lt;= e; i++) &#123;</span><br><span class="line">        int u = ed[i].u, v = ed[i].v;</span><br><span class="line">        if (vis[u] &amp;&amp; !vis[v] &amp;&amp; fabs(ed[i].f) &lt; Eps &amp;&amp; !flag[map[u][v]]) &#123;</span><br><span class="line">            flag[map[u][v]] = true;</span><br><span class="line">            num++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;&quot;%d\n&quot;&quot;, num);</span><br><span class="line">    for (int i = 1; i &lt;= m; i++) &#123;</span><br><span class="line">        if (flag[i]) printf(&quot;&quot;%d &quot;&quot;, i);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;&quot;\n\n&quot;&quot;);</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">freopen(&quot;&quot;networkwar.in&quot;&quot;, &quot;&quot;r&quot;&quot;, stdin);</span><br><span class="line">freopen(&quot;&quot;networkwar.out&quot;&quot;, &quot;&quot;w&quot;&quot;, stdout);</span><br><span class="line">    while (MAIN()) &#123;</span><br><span class="line">        memset(x, 0, sizeof x);</span><br><span class="line">        memset(y, 0, sizeof y);</span><br><span class="line">        memset(z, 0, sizeof z);</span><br><span class="line">        memset(map, 0, sizeof map);</span><br><span class="line">        memset(vis, 0, sizeof vis);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/23/migration/" itemprop="url">
-                  migration
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-23T14:07:04+08:00" content="2016-04-23">
-              2016-04-23
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/23/migration/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/23/migration/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>I’m going to migrate the pages from ghost to hexo!<br>F**k ace!</p>
-
-          
+          <p>妈妈我终于会线性规划啦！<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/23/76/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -593,21 +475,12 @@
 
       
         
-          
-            <a id="more"></a> 
-<h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>假设有n根柱子，现要按下述规则在这n根柱子中依次放入编号为 1，2，3，4……的球。<br>（1）每次只能在某根柱子的最上面放球。<br>（2）在同一根柱子中，任何2个相邻球的编号之和为完全平方数。<br>试设计一个算法，计算出在n根柱子上最多能放多少个球。例如，在4 根柱子上最多可<br>放11个球。<br>编程任务：<br>对于给定的n，计算在 n根柱子上最多能放多少个球。  </p>
-<h2 id="数据输入："><a href="#数据输入：" class="headerlink" title="数据输入："></a>数据输入：</h2><p>文件第1 行有 1个正整数n，表示柱子数。</p>
-<h2 id="结果输出"><a href="#结果输出" class="headerlink" title="结果输出:"></a>结果输出:</h2><p>文件的第一行是球数。</p>
-<h2 id="数据规模"><a href="#数据规模" class="headerlink" title="数据规模"></a>数据规模</h2><p>n&lt;=60  保证答案小于1600</p>
-<h2 id="输入文件示例"><a href="#输入文件示例" class="headerlink" title="输入文件示例"></a>输入文件示例</h2><p>4</p>
-<h2 id="输出文件示例"><a href="#输出文件示例" class="headerlink" title="输出文件示例"></a>输出文件示例</h2><p>11</p>
-<h2 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h2><p>方案如下</p>
-<p>1 8<br>2 7 9<br>3 6 10<br>4 5 11</p>
-<p>每一行表示一个柱子上的球 </p>
-<h2 id="Sol"><a href="#Sol" class="headerlink" title="Sol"></a>Sol</h2><p>二分图的性质：<br>最大匹配 = 最小顶点覆盖<br>最大独立集 = 点数 - 最小顶点覆盖 = 最小路径覆盖<br>这道题是求最小路径覆盖<br>把DAG的点分成两个，把入边和出边分开，形成二分图<br>然后求最大匹配即可。</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">#include &lt;queue&gt;</span><br><span class="line">#include &lt;cmath&gt;</span><br><span class="line">#define d(i) i + 5000</span><br><span class="line">#define S 10002</span><br><span class="line">#define T 10001</span><br><span class="line">#define maxn 10010</span><br><span class="line">#define maxm 100010</span><br><span class="line">#define INF 1000000009</span><br><span class="line">#define min(a,b) (a&lt;b)?a:b</span><br><span class="line">using namespace std;</span><br><span class="line">int ans = 0, s = 0, n;</span><br><span class="line">struct Edge</span><br><span class="line">&#123;</span><br><span class="line">	int v, f, l, nex;</span><br><span class="line">&#125;ed[maxm];</span><br><span class="line">int fir[maxn], e = 0;</span><br><span class="line">void addedge(int u, int v, int f, int l)&#123;</span><br><span class="line">	ed[++e].v = v;</span><br><span class="line">	ed[e].f = f;</span><br><span class="line">	ed[e].l = e - l;</span><br><span class="line">	ed[e].nex = fir[u];</span><br><span class="line">	fir[u] = e;</span><br><span class="line">&#125;</span><br><span class="line">queue &lt;int&gt; q;</span><br><span class="line">int dis[maxn];</span><br><span class="line">bool bfs()&#123;</span><br><span class="line">	memset(dis, -1, sizeof dis);</span><br><span class="line">	q.push(S);</span><br><span class="line">	dis[S] = 0;</span><br><span class="line">	while (!q.empty())&#123;</span><br><span class="line">		int u = q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		for (int i = fir[u]; i; i = ed[i].nex) &#123;</span><br><span class="line">			int v = ed[i].v;</span><br><span class="line">			if (ed[i].f &amp;&amp; dis[v] == -1) &#123;</span><br><span class="line">				dis[v] = dis[u] + 1;</span><br><span class="line">				q.push(v);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if (dis[T] != -1) return true;</span><br><span class="line">	return false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int find(int u, int mf = INF)&#123;</span><br><span class="line">	if (u == T) return mf;</span><br><span class="line">	int flow = 0;</span><br><span class="line">	for (int i = fir[u]; i; i = ed[i].nex) &#123;</span><br><span class="line">		int v = ed[i].v;</span><br><span class="line">		if (ed[i].f &amp;&amp; dis[v] == dis[u] + 1 &amp;&amp; (flow = find(v, min(mf, ed[i].f)))) &#123;</span><br><span class="line">			ed[i].f -= flow;</span><br><span class="line">			ed[ed[i].l].f += flow;</span><br><span class="line">			return flow;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int dinic()&#123;</span><br><span class="line">	int ret = 0, flow = 0;</span><br><span class="line">	while (bfs()) &#123;</span><br><span class="line">		while (flow = find(S)) &#123;</span><br><span class="line">			ret += flow;</span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;</span><br><span class="line">	return ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">freopen(&quot;&quot;balla.in&quot;&quot;, &quot;&quot;r&quot;&quot;, stdin);</span><br><span class="line">freopen(&quot;&quot;balla.out&quot;&quot;, &quot;&quot;w&quot;&quot;, stdout);</span><br><span class="line">	scanf(&quot;&quot;%d&quot;&quot;, &amp;n);</span><br><span class="line">	int s = 0, d = 0;</span><br><span class="line">	while (true) &#123;</span><br><span class="line">		s++;</span><br><span class="line">		for (int i = 1; i &lt; s; i++) &#123;</span><br><span class="line">			if (sqrt(i+s) == int(sqrt(i+s))) &#123;</span><br><span class="line">				addedge(i, d(s), 1, 1);</span><br><span class="line">				addedge(d(s), i, 0, -1);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		addedge(S, s, 1, 1);</span><br><span class="line">		addedge(s, S, 0, -1);</span><br><span class="line">		addedge(d(s), T, 1, 1);</span><br><span class="line">		addedge(T, d(s), 0, -1);</span><br><span class="line">		d += dinic();</span><br><span class="line">		if (s - d &gt; n) &#123;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;&quot;%d&quot;&quot;, s-1);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
+          <p>最小路径覆盖好绕啊。。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/23/74/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -705,125 +578,12 @@
 
       
         
-          
-            <a id="more"></a> 
-<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>对于一个软件公司来说，在发行一个新软件之后，可以说已经完成了工作。但是实际上，许多软件公司在发行一个新产品之后，还经常发送补丁程序，修改原产品中的错误(当然，有些补丁是要收费的)。<br>如某微硬公司就是这样的一个软件公司。今年夏天，在发行了一个新的字处理软件之后，到现在他们已经编写了许多补丁程序。仅仅在这个周末，他们就用新编写的补丁程序解决了软件中的一个大问题。而在每一个补丁程序修改软件中的某些错误时，有可能引起软件中原来存在的某些错误重新发作。发生这种情况是因为当修改一个错误时，补丁程序利用了程序中约定的特别行为，从而导致错误的重新产生。<br>微硬公司在他们的软件中一共发现了n个错误B={bl，b2，…，bn)，现在他们一共发送了m 个补丁程序p1,p2，…,pm。如果想要在软件中应用第pi号补丁程序，则软件中必须存在错误B+i ≤B，并且错误B-i≤B必须不存在(显然，B+i∩B-i为空集)。然后，这个补丁程序将改正错误 F-i≤B(如果错误存在的话)，并且产生新错误F+i≤B(同样，F+i∩F-i也为空集)。<br>现在，微硬公司的问题只有一个。他们给出一个原始版本的软件，软件包含了B中的所有错误，然后按照某一顺序在软件中应用补丁程序(应用某个补丁程序时，软件必须符合该补丁程序的应用条件，且运行该程序需要一定的时间)。问怎样才能最快地改正软件中的所有错误(即为修正所有错误而运行的补丁程序的总时间最短)?</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>数据存放在当前目录下的文本文件“bugs.in””中。<br>文件的第一行包含两个整数n和m，分别表示软件中的错误个数和发送的补丁个数。其中，n和m满足条件：1≤n≤20，1≤m≤100。<br>接下来的m行(即第2行至第m+1行)按顺序描述了m个补丁程序的情况，第i行描述第i-1号补丁程序。每一行包含一个整数(表示在软件中应用该补丁程序所需的时间，单位为秒)和两个n个字符的字符串(中间均用一个空格分开)。、<br>第一个字符串描述了应用该补丁程序(第i-1号)的条件，即说明在软件中某错误应该存在还是不应该存在。字符串的第i个字符，如果是“+”，表示在软件中必须存在bi号错误；如果是“-”，表示软件中错误bi不能存在；如果是“0””，则表示错误bi存在或不存在均可(即对应用该补丁程序没有影响)。<br>第二个字符串描述了应用该补丁程序(第i-1号)后的效果，即应用补丁程序后，哪些错误被修改好了，而又产生了哪些新错误。字符串的第i个字符，如果是“+”，表示产生了一个新错误bi；如果是“-”，表示错误bi被修改好了；如果是“0”，则表示错误bi不变(即原来存在，则仍然存在；原来不存在，则也不存在)。  </p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>答案输出在当前目录下的文本文件“bugs.out””中。<br>请你找到一个应用补丁程序的最优顺序，修改软件中的所有错误，并且所用的时间最少。<br>注意，每个补丁程序是可以应用多次的。<br>如果存在这样一个序列，请在输出文件的第一行输出应用补丁程序的总时间(单位为秒)；如果找不到这样一个序列，请在输出文件的第一行输出-1。  </p>
-<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p>样例输入（bugs.in）:<br>3 3<br>1 000 00-<br>1 00- 0-+<br>2 0– -++<br>样例输出（bugs.out）：<br>8 </p>
-<h2 id="Sol"><a href="#Sol" class="headerlink" title="Sol"></a>Sol</h2><p>与网络流无关</p>
-<p>只有20个补丁，很容易想到状态压缩。<br>最多(1&lt;&lt;20)个状态，一个状态到另一个状态间有一个花费。<br>求最短花费，就是最短路了。</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">#include &lt;queue&gt;</span><br><span class="line">#define maxn 1049000</span><br><span class="line">#define maxm 120</span><br><span class="line">using namespace std;</span><br><span class="line">struct Path</span><br><span class="line">&#123;</span><br><span class="line">	int p1, p2, q1, q2, dis;</span><br><span class="line">&#125;p[maxm];</span><br><span class="line">int dis[maxn], n, m;</span><br><span class="line">bool bo[maxn];</span><br><span class="line">queue &lt;int&gt; q;</span><br><span class="line">bool spfa(int src)&#123;</span><br><span class="line">	memset(dis, 127, sizeof dis);</span><br><span class="line">	int MAX = dis[0];</span><br><span class="line">	q.push(src);</span><br><span class="line">	dis[src] = 0;</span><br><span class="line">	bo[src] = true;</span><br><span class="line">	while (!q.empty()) &#123;</span><br><span class="line">		int u = q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		bo[u] = false;</span><br><span class="line">		for (int i = 1; i &lt;= m; i++) </span><br><span class="line">			if ((p[i].p1 &amp; u) == p[i].p1 &amp;&amp; (p[i].p2 &amp; u) == 0)&#123;</span><br><span class="line">				int v = (u | p[i].q1) &amp; (~p[i].q2) ;</span><br><span class="line">				//printf(&quot;&quot;%d %d %d %d %d\n&quot;&quot;, u, v, i, p[i].q1, p[i].q2);</span><br><span class="line">				if (dis[v] &gt; dis[u] + p[i].dis) &#123;</span><br><span class="line">					dis[v] = dis[u] + p[i].dis;</span><br><span class="line">					if (!bo[v]) &#123;</span><br><span class="line">						q.push(v);</span><br><span class="line">						bo[v] = true;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if (dis[0] &lt; MAX) return true;</span><br><span class="line">	return false;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">freopen(&quot;&quot;bugs.in&quot;&quot;,&quot;&quot;r&quot;&quot;,stdin);</span><br><span class="line">freopen(&quot;&quot;bugs.out&quot;&quot;,&quot;&quot;w&quot;&quot;,stdout);</span><br><span class="line">	scanf(&quot;&quot;%d%d&quot;&quot;, &amp;n, &amp;m);</span><br><span class="line">	for (int i = 1; i &lt;= m; i++)&#123;</span><br><span class="line">		char a[21],b[21];</span><br><span class="line">		scanf(&quot;&quot;%d %s %s&quot;&quot;, &amp;p[i].dis, a, b);</span><br><span class="line">		for (int j = 0; j &lt;= n-1; j++)&#123;</span><br><span class="line">			if (a[j] == &apos;+&apos;) p[i].p1 |= 1 &lt;&lt; j;</span><br><span class="line">			if (a[j] == &apos;-&apos;) p[i].p2 |= 1 &lt;&lt; j;</span><br><span class="line">			if (b[j] == &apos;+&apos;) p[i].q1 |= 1 &lt;&lt; j;</span><br><span class="line">			if (b[j] == &apos;-&apos;) p[i].q2 |= 1 &lt;&lt; j;</span><br><span class="line">		&#125;</span><br><span class="line">		//printf(&quot;&quot;%d %d %d %d\n&quot;&quot;, p[i].q1, p[i].q2, p[i].p1, p[i].p2);</span><br><span class="line">	&#125;</span><br><span class="line">	if (spfa((1 &lt;&lt; n) - 1)) printf(&quot;&quot;%d\n&quot;&quot;, dis[0]);</span><br><span class="line">	else printf(&quot;&quot;-1\n&quot;&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/23/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-23T13:30:06+08:00" content="2016-04-23">
-              2016-04-23
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/23/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/23/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          <p>被标题坑了。。。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/23/75/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -921,15 +681,12 @@
 
       
         
-          
-            <a id="more"></a> 
-<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>飞行大队有若干个来自各地的驾驶员，专门驾驶一种型号的飞机，这种飞机每架有两个驾驶员,需一个正驾驶员和一个副驾驶员。由于种种原因，例如相互配合的问题，有些驾驶员不能在同一架飞机上飞行，问如何搭配驾驶员才能使出航的飞机最多。</p>
-<p>假设有10个驾驶员，其中V1, V2, V3, V4, V5是正驾驶员，V6, V7, V8, V9 , V10是副驾驶员。如果一个正驾驶员和一个副驾驶员可以同机飞行，就在代表他们两个之间连一条线,两个人不能同机飞行，就不连。例如V1和V7可以同机飞行，而V1和V8就不行。请搭配飞行员，使出航的飞机最多。注意:因为驾驶工作分工严格,两个正驾驶员或两个副驾驶员都不能同机飞行.</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入文件有若干行<br>第一行，两个整数n与n1，表示共有n个飞行员(2&lt;=n&lt;=100),其中有n1名飞行员是正驾驶员.<br>下面有若干行,每行有2个数字a,b。表示正驾驶员a和副驾驶员b可以同机飞行。<br>注:正驾驶员的编号在前,即正驾驶员的编号小于副驾驶员的编号.  </p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出文件有一行<br>第一行，1个整数，表示最大起飞的飞机数。  </p>
-<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">输入文件名： flyer.in</span><br><span class="line">10 5</span><br><span class="line">1 7</span><br><span class="line">2 6</span><br><span class="line">2 10</span><br><span class="line">3 7</span><br><span class="line">4 8</span><br><span class="line">5 9</span><br><span class="line"> </span><br><span class="line">输出文件名：flyer.out</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;queue&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">#define maxn 10001</span><br><span class="line">#define maxm 100001</span><br><span class="line">#define INF 1000000007</span><br><span class="line">using namespace std;</span><br><span class="line">int fir[maxn], e;</span><br><span class="line">struct Edge&#123;</span><br><span class="line">	int v, f, c, nex, link;</span><br><span class="line">&#125; edge[maxm];</span><br><span class="line">int dis[maxn], n, m, S, T;</span><br><span class="line">void addedge(int u, int v, int c, int f, int l)&#123;</span><br><span class="line">	edge[++e].v = v;</span><br><span class="line">	edge[e].f = f;</span><br><span class="line">	edge[e].c = c;</span><br><span class="line">	edge[e].link = e + l;</span><br><span class="line">	edge[e].nex = fir[u];</span><br><span class="line">	fir[u] = e;</span><br><span class="line">&#125;</span><br><span class="line">queue &lt;int&gt; q;</span><br><span class="line">bool bfs()&#123;</span><br><span class="line">	memset(dis, -1, sizeof dis);</span><br><span class="line">	q.push(S);</span><br><span class="line">	dis[S] = 0;</span><br><span class="line">	while (!q.empty()) &#123;</span><br><span class="line">		int u = q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		for (int i = fir[u]; i; i = edge[i].nex) &#123;</span><br><span class="line">			int v = edge[i].v;</span><br><span class="line">			if (edge[i].f &amp;&amp; dis[v] == -1)&#123;</span><br><span class="line">				dis[v] = dis[u] + 1;</span><br><span class="line">				if (v==T) return true;</span><br><span class="line">				q.push(v);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return false;</span><br><span class="line">&#125;</span><br><span class="line">int finds(int u, int maxflow = INF)&#123;</span><br><span class="line">	int flow;</span><br><span class="line">	if (u == T) return maxflow;</span><br><span class="line">	for (int i = fir[u]; i; i = edge[i].nex)&#123;</span><br><span class="line">		int v = edge[i].v;</span><br><span class="line">		if (edge[i].f &amp;&amp; dis[v] == dis[u] + 1 &amp;&amp; (flow = finds(v, min(maxflow, edge[i].f)))  )&#123;</span><br><span class="line">			edge[i].f -= flow;</span><br><span class="line">			edge[edge[i].link].f += flow;</span><br><span class="line">			return flow;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line">int dinic()&#123;</span><br><span class="line">	int cnt = 0, flow;</span><br><span class="line">	while (bfs()) &#123;</span><br><span class="line">			while (flow = finds(S)) &#123;</span><br><span class="line">			cnt += flow;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return cnt;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line"> freopen(&quot;&quot;flyer.in&quot;&quot;,&quot;&quot;r&quot;&quot;,stdin);</span><br><span class="line"> freopen(&quot;&quot;flyer.out&quot;&quot;,&quot;&quot;w&quot;&quot;,stdout);</span><br><span class="line">	scanf(&quot;&quot;%d%d&quot;&quot;, &amp;n, &amp;m);</span><br><span class="line">	int i, j;</span><br><span class="line">	while (scanf(&quot;&quot;%d%d&quot;&quot;, &amp;i, &amp;j)!=EOF)&#123;</span><br><span class="line">		if (i == -1 || j == -1) break;</span><br><span class="line">		addedge(i, j, 1, 1, 1);</span><br><span class="line">		addedge(j, i, 0, 0, -1);</span><br><span class="line">	&#125;</span><br><span class="line">	for (int i = 1; i &lt;= m; i++) &#123;</span><br><span class="line">		addedge(n+2, i, 1, 1, 1);</span><br><span class="line">		addedge(i, n+2, 0, 0, -1);</span><br><span class="line">	&#125;</span><br><span class="line">	for (int i = m+1; i &lt;= n; i++) &#123;</span><br><span class="line">		addedge(i, n+1, 1, 1, 1);</span><br><span class="line">		addedge(n+1, i, 0, 0, -1);</span><br><span class="line">	&#125;</span><br><span class="line">	S = n+2; T = n+1;</span><br><span class="line">	printf(&quot;&quot;%d\n&quot;&quot;,dinic());</span><br><span class="line">	// for (int u= 1; u &lt;= m; u++)&#123;</span><br><span class="line">	// 	for (int i = fir[u]; i; i = edge[i].nex)&#123;</span><br><span class="line">	// 		if (edge[i].f == 0 &amp;&amp; edge[i].v &lt;= n) &#123;</span><br><span class="line">	// 			printf(&quot;&quot;%d %d\n&quot;&quot;, u, edge[i].v);</span><br><span class="line">	// 			break;</span><br><span class="line">	// 		&#125;</span><br><span class="line">	// 	&#125;</span><br><span class="line">	// &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
+          <p>二分图匹配模板题<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/23/73/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -997,7 +754,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
