@@ -291,7 +291,147 @@
 <h2 id="结果输出"><a href="#结果输出" class="headerlink" title="结果输出"></a>结果输出</h2><p>第1行是实验编号；第2行是仪器编号；最后一行是净收益。</p>
 <h2 id="输入文件示例-shuttle-in"><a href="#输入文件示例-shuttle-in" class="headerlink" title="输入文件示例 shuttle.in"></a>输入文件示例 shuttle.in</h2><p>2 3<br>10 1 2<br>25 2 3<br>5 6 7</p>
 <h2 id="输出文件示例-shuttle-out"><a href="#输出文件示例-shuttle-out" class="headerlink" title="输出文件示例 shuttle.out"></a>输出文件示例 shuttle.out</h2><p>1 2<br>1 2 3<br>17</p>
-<h2 id="Sol"><a href="#Sol" class="headerlink" title="Sol"></a>Sol</h2><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 410</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxm 20000</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> S 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> T 400</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 1000000007</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> d(i) i + 150</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Edge</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> v, f, l, nex, w;</span><br><span class="line">&#125;ed[maxm];</span><br><span class="line"><span class="keyword">int</span> n, m, dis[maxn], e, fir[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> f, <span class="keyword">int</span> l)</span></span>&#123;</span><br><span class="line">	ed[++e].v = v;</span><br><span class="line">	ed[e].f = f;</span><br><span class="line">	ed[e].w = f;</span><br><span class="line">	ed[e].l = e+l;</span><br><span class="line">	ed[e].nex = fir[u];</span><br><span class="line">	fir[u] = e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">queue</span> &lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">bfs</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(dis, <span class="number">-1</span>, <span class="keyword">sizeof</span> dis);</span><br><span class="line">	<span class="keyword">while</span> (!q.empty()) q.pop();</span><br><span class="line">	q.push(S);</span><br><span class="line">	dis[S] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">		<span class="keyword">int</span> u = q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = fir[u]; i; i = ed[i].nex) &#123;</span><br><span class="line">			<span class="keyword">int</span> v = ed[i].v;</span><br><span class="line">			<span class="keyword">if</span> (ed[i].f &amp;&amp; dis[v] == <span class="number">-1</span>)&#123;</span><br><span class="line">				dis[v] = dis[u] + <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span> (v==T) return <span class="literal">true</span>;</span><br><span class="line">				q.push(v);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">finds</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> maxflow = INF)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> flow;</span><br><span class="line">	<span class="keyword">if</span> (u == T) return maxflow;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = fir[u]; i; i = ed[i].nex)&#123;</span><br><span class="line">		<span class="keyword">int</span> v = ed[i].v;</span><br><span class="line">		<span class="keyword">if</span> (ed[i].f &amp;&amp; dis[v] == dis[u] + <span class="number">1</span> &amp;&amp; (flow = finds(v, min(maxflow, ed[i].f)))  )&#123;</span><br><span class="line">			ed[i].f -= flow;</span><br><span class="line">			ed[ed[i].l].f += flow;</span><br><span class="line">			return flow;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dinic</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> cnt = <span class="number">0</span>, flow;</span><br><span class="line">	<span class="keyword">while</span> (bfs()) &#123;</span><br><span class="line">			<span class="keyword">while</span> (flow = finds(S)) &#123;</span><br><span class="line">			cnt += flow;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> bo[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u)</span></span>&#123;</span><br><span class="line">	bo[u] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = fir[u]; i; i = ed[i].nex)&#123;</span><br><span class="line">		<span class="keyword">int</span> v = ed[i].v;</span><br><span class="line">		<span class="keyword">if</span> (ed[i].f &amp;&amp; !bo[v]) &#123;</span><br><span class="line">			bo[v] = <span class="literal">true</span>;</span><br><span class="line">			dfs(v);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getNum</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">char</span> s[])</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= <span class="built_in">strlen</span>(s); i++)&#123;</span><br><span class="line">		<span class="keyword">if</span> (s[i] &gt;= <span class="string">'0'</span> &amp;&amp; s[i] &lt;=<span class="string">'9'</span>) x = x * <span class="number">10</span> + s[i] -<span class="string">'0'</span>;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			addedge(S, u, x, <span class="number">1</span>);</span><br><span class="line">			addedge(u, S, <span class="number">0</span>, <span class="number">-1</span>);</span><br><span class="line">			x = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (i++; i &lt;= <span class="built_in">strlen</span>(s); i++)&#123;</span><br><span class="line">		<span class="keyword">if</span> (s[i] &gt;= <span class="string">'0'</span> &amp;&amp; s[i] &lt;=<span class="string">'9'</span>) x = x * <span class="number">10</span> + s[i] -<span class="string">'0'</span>;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			addedge(u, d(x), INF, <span class="number">1</span>);</span><br><span class="line">			addedge(d(x), u, <span class="number">0</span>, <span class="number">-1</span>);</span><br><span class="line">			x = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> ans1[maxn], ans2[maxn], a1 = <span class="number">0</span>, a2 = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">freopen(<span class="string">""</span>shuttle.in<span class="string">""</span>, <span class="string">""</span>r<span class="string">""</span>, <span class="built_in">stdin</span>);</span><br><span class="line">freopen(<span class="string">""</span>shuttle.out<span class="string">""</span>, <span class="string">""</span>w<span class="string">""</span>, <span class="built_in">stdout</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">""</span>%d%d\n<span class="string">""</span>, &amp;m, &amp;n);</span><br><span class="line">	<span class="keyword">char</span> str[<span class="number">1001</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</span><br><span class="line">		gets(str);</span><br><span class="line">		getNum(i, str);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> c;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">""</span>%d<span class="string">""</span>, &amp;c);</span><br><span class="line">		addedge(d(i), T, c, <span class="number">1</span>);</span><br><span class="line">		addedge(T, d(i), <span class="number">0</span>, <span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	dinic();</span><br><span class="line">	dfs(S);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = fir[S]; i; i = ed[i].nex)&#123;</span><br><span class="line">		<span class="keyword">int</span> v = ed[i].v;</span><br><span class="line">		<span class="keyword">if</span> (bo[v]) &#123; ans += ed[i].w; ans1[++a1] = v; &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = fir[T]; i; i = ed[i].nex)&#123;</span><br><span class="line">		<span class="keyword">int</span> v = ed[i].v;</span><br><span class="line">		<span class="keyword">if</span> (bo[v]) &#123;ans -= ed[ed[i].l].w; ans2[++a2] = v; &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(ans1+<span class="number">1</span>, ans1+a1+<span class="number">1</span>);</span><br><span class="line">	sort(ans2+<span class="number">1</span>, ans2+a2+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= a1; i++) <span class="built_in">printf</span>(<span class="string">""</span>%d <span class="string">""</span>, ans1[i]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">""</span>\n<span class="string">""</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= a2; i++) <span class="built_in">printf</span>(<span class="string">""</span>%d <span class="string">""</span>, ans2[i] - <span class="number">150</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">""</span>\n<span class="string">""</span>); </span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">""</span>%d\n<span class="string">""</span>, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Sol"><a href="#Sol" class="headerlink" title="Sol"></a>Sol</h2><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;queue&gt;
+#include &lt;algorithm&gt;
+#define maxn 410
+#define maxm 20000
+#define S 0
+#define T 400
+#define INF 1000000007
+#define d(i) i + 150
+using namespace std;
+
+struct Edge
+{
+    int v, f, l, nex, w;
+}ed[maxm];
+int n, m, dis[maxn], e, fir[maxn];
+
+int addedge(int u, int v, int f, int l){
+    ed[++e].v = v;
+    ed[e].f = f;
+    ed[e].w = f;
+    ed[e].l = e+l;
+    ed[e].nex = fir[u];
+    fir[u] = e;
+}
+
+queue &lt;int&gt; q;
+bool bfs(){
+    memset(dis, -1, sizeof dis);
+    while (!q.empty()) q.pop();
+    q.push(S);
+    dis[S] = 0;
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        for (int i = fir[u]; i; i = ed[i].nex) {
+            int v = ed[i].v;
+            if (ed[i].f &amp;&amp; dis[v] == -1){
+                dis[v] = dis[u] + 1;
+                if (v==T) return true;
+                q.push(v);
+            }
+        }
+    }
+    return false;
+}
+int finds(int u, int maxflow = INF){
+    int flow;
+    if (u == T) return maxflow;
+    for (int i = fir[u]; i; i = ed[i].nex){
+        int v = ed[i].v;
+        if (ed[i].f &amp;&amp; dis[v] == dis[u] + 1 &amp;&amp; (flow = finds(v, min(maxflow, ed[i].f)))  ){
+            ed[i].f -= flow;
+            ed[ed[i].l].f += flow;
+            return flow;
+        }
+    }
+    return 0;
+}
+int dinic(){
+    int cnt = 0, flow;
+    while (bfs()) {
+            while (flow = finds(S)) {
+            cnt += flow;
+        }
+    }
+    return cnt;
+}
+
+bool bo[maxn];
+void dfs(int u){
+    bo[u] = true;
+    for (int i = fir[u]; i; i = ed[i].nex){
+        int v = ed[i].v;
+        if (ed[i].f &amp;&amp; !bo[v]) {
+            bo[v] = true;
+            dfs(v);
+        }
+    }
+}
+
+void getNum(int u, char s[]){
+    int x = 0, i = 0;
+    for (i = 0; i &lt;= strlen(s); i++){
+        if (s[i] &gt;= &#39;0&#39; &amp;&amp; s[i] &lt;=&#39;9&#39;) x = x * 10 + s[i] -&#39;0&#39;;
+        else {
+            addedge(S, u, x, 1);
+            addedge(u, S, 0, -1);
+            x = 0;
+            break;
+        }
+    }
+    for (i++; i &lt;= strlen(s); i++){
+        if (s[i] &gt;= &#39;0&#39; &amp;&amp; s[i] &lt;=&#39;9&#39;) x = x * 10 + s[i] -&#39;0&#39;;
+        else {
+            addedge(u, d(x), INF, 1);
+            addedge(d(x), u, 0, -1);
+            x = 0;
+        }
+    }
+}
+
+int ans1[maxn], ans2[maxn], a1 = 0, a2 = 0, ans = 0;
+int main(){
+freopen(&quot;&quot;shuttle.in&quot;&quot;, &quot;&quot;r&quot;&quot;, stdin);
+freopen(&quot;&quot;shuttle.out&quot;&quot;, &quot;&quot;w&quot;&quot;, stdout);
+    scanf(&quot;&quot;%d%d\n&quot;&quot;, &amp;m, &amp;n);
+    char str[1001];
+    for (int i = 1; i &lt;= m; i++){
+        gets(str);
+        getNum(i, str);
+    }
+    for (int i = 1; i &lt;= n; i++){
+        int c;
+        scanf(&quot;&quot;%d&quot;&quot;, &amp;c);
+        addedge(d(i), T, c, 1);
+        addedge(T, d(i), 0, -1);
+    }
+    dinic();
+    dfs(S);
+
+    for (int i = fir[S]; i; i = ed[i].nex){
+        int v = ed[i].v;
+        if (bo[v]) { ans += ed[i].w; ans1[++a1] = v; }
+    }
+
+    for (int i = fir[T]; i; i = ed[i].nex){
+        int v = ed[i].v;
+        if (bo[v]) {ans -= ed[ed[i].l].w; ans2[++a2] = v; }
+    }
+    sort(ans1+1, ans1+a1+1);
+    sort(ans2+1, ans2+a2+1);
+    for (int i = 1; i &lt;= a1; i++) printf(&quot;&quot;%d &quot;&quot;, ans1[i]);
+    printf(&quot;&quot;\n&quot;&quot;);
+    for (int i = 1; i &lt;= a2; i++) printf(&quot;&quot;%d &quot;&quot;, ans2[i] - 150);
+    printf(&quot;&quot;\n&quot;&quot;); 
+    printf(&quot;&quot;%d\n&quot;&quot;, ans);
+}
+</code></pre>
 
       
     </div>
