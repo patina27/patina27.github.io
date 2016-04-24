@@ -60,7 +60,7 @@
 <meta property="og:url" content="http://hexo.patina27.net/2016/04/24/USACO-OPEN-2016-262144/index.html">
 <meta property="og:site_name" content="Neologism">
 <meta property="og:description" content="看了题解之后mengbi了，原来这么简单。但是为什么比赛的时候就是没有想到呢？大概是我DP的功力还是太浅了。">
-<meta property="og:updated_time" content="2016-04-23T17:25:02.165Z">
+<meta property="og:updated_time" content="2016-04-24T01:52:20.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="USACO OPEN 2016 262144">
 <meta name="twitter:description" content="看了题解之后mengbi了，原来这么简单。但是为什么比赛的时候就是没有想到呢？大概是我DP的功力还是太浅了。">
@@ -266,8 +266,8 @@
 <h2 id="SAMPLE-OUTPUT"><a href="#SAMPLE-OUTPUT" class="headerlink" title="SAMPLE OUTPUT:"></a>SAMPLE OUTPUT:</h2><p>3</p>
 <p>In this example shown here, Bessie first merges the second and third 1s to obtain the sequence 1 2 2, and then she merges the 2s into a 3. Note that it is not optimal to join the first two 1s. </p>
 <h2 id="Sol"><a href="#Sol" class="headerlink" title="Sol"></a>Sol</h2><p>考场上我用区间DP得了样例分（囧  </p>
-<p>通过计算器计算，我们可以发现，$262144 \= 2^18 $<br>那么这样的话很明显是用类似倍增之类的手段处理。</p>
-<p>这里有一个非常巧妙的建模方法：<br>$f[p][i]$表示从i为起点，最大值为P的终点的值（无法实现即为-1）<br>则有递推方程式：<br>f[p+1][i] = f[p][f[p][i]+1]</p>
+<p>通过计算器计算，我们可以发现，$262144 = 2^{18} $<br>那么这样的话很明显是用类似倍增之类的手段处理。</p>
+<p>这里有一个非常巧妙的建模方法：<br>$f[p][i]$表示从i为起点，最大值为P的终点的值（无法实现即为-1）<br>则有递推方程式：<br>$f[p+1][i] = f[p][f[p][i]+1]$</p>
 <p>问题迎刃而解。</p>
 <h2 id="Origin-Sol"><a href="#Origin-Sol" class="headerlink" title="Origin Sol"></a>Origin Sol</h2><p>(Analysis by Mark Gordon)<br>A simple way to approach this problem would be to consider all ranges of the input array and determine the largest number that can be produced in that range. However, most ranges aren’t actually interesting as they could never be combined into one. </p>
 <p>To see this it helps to look at the equivalent problem where each of the array elements are powers of two and instead of combining x and x to produce x + 1 you produced 2x. Now it’s clear that a range must sum to a power of two to be interesting. In fact, an interesting range can be better described by its starting position and the power of two it sums to. </p>
