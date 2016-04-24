@@ -61,7 +61,7 @@
 <meta property="og:site_name" content="Neologism">
 <meta property="og:description" content="主要是有个gcd(i,n)的公式，所以我重发一下。">
 <meta property="og:image" content="http://img.hoop8.com/attachments/1510/6973664417030.png">
-<meta property="og:updated_time" content="2016-04-24T06:34:15.187Z">
+<meta property="og:updated_time" content="2016-04-24T06:36:12.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[CodeVS 月赛 #7 day1] FFF 团卧底的算式">
 <meta name="twitter:description" content="主要是有个gcd(i,n)的公式，所以我重发一下。">
@@ -270,7 +270,7 @@
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>对于每个sigma，逐个击破</p>
 <p>第一个sigma，我猜gcd（n+i，n*i）都等于1，跑了个程序测了一下发现就是这么回事，然后就解决了。</p>
 <p>第二个sigma比较坑爹，有一个叫做Pillai函数的东西。</p>
-<p>设函数g(n) = gcd(i,n) (1&lt;=i&lt;=n)，对于任意给定的i 。 g(1) = 1 ,g(n)=g(m1)<em>g(m2) (n=m1</em>m2 且 （m1, m2）= 1)，由积性函数定义,g是积性函数。由具体数学上的结论，积性函数的和也是积性的。所以f(n) = ∑gcd(i, n)也是积性函数。n&gt;1时n可以被唯一分解 n=p1^a1<em>p2^a2</em>…<em>ps^as，由于f(n)是积所以f(n) = f(p1^a1)</em>f(p2^a2)*…f(pr^ar)。所以只要求f(pi^ai)就好，如果d是n的一个约数，那么1&lt;=i&lt;=n中gcd(i,n) = d的个数是phi(n/d)，即n/d的欧拉函数</p>
+<p>设函数g(n) = gcd(i,n) (1&lt;=i&lt;=n)，对于任意给定的i 。 g(1) = 1 ,g(n)=g(m1)*g(m2) (n=m1*m2 且 （m1, m2）= 1)，由积性函数定义,g是积性函数。由具体数学上的结论，积性函数的和也是积性的。所以f(n) = ∑gcd(i, n)也是积性函数。n&gt;1时n可以被唯一分解 n=p1^a1*p2^a2*…*ps^as，由于f(n)是积所以f(n) = f(p1^a1)*f(p2^a2)*…f(pr^ar)。所以只要求f(pi^ai)就好，如果d是n的一个约数，那么1&lt;=i&lt;=n中gcd(i,n) = d的个数是phi(n/d)，即n/d的欧拉函数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f(pi^ai) =  Φ（pi^ai）+pi*Φ（pi^(ai-1)）+pi^2*Φ（pi^(ai-2)）+...+pi^(ai-1)* Φ（pi）+ pi^ai *Φ（1）</span><br><span class="line">= pi^(ai-1)*(pi-1) + pi*pi^(ai-2)*(pi-1)....+pi^ai</span><br><span class="line">=  pi^ai*(1+ai*(1-1/pi))</span><br></pre></td></tr></table></figure>
 <p>接下来把各个项乘起来OK</p>
 <p>第三个乱搞即可。。</p>
