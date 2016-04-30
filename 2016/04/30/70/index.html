@@ -38,7 +38,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="oi,01分数规划," />
+  <meta name="keywords" content="OI,线段树," />
 
 
 
@@ -54,16 +54,16 @@
 
 
 
-<meta name="description" content="复习一下分数规划。">
+<meta name="description" content="本身像我这么懒的人是不会去打lazyTag线段树的。。。但是今天模拟赛的时候看错题了。。。  以为要打线段树然后就把刘书翻出来再看一遍。。。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Poj2976 Dropping tests 普通的0/1分数规划">
-<meta property="og:url" content="http://hexo.patina27.net/2016/04/26/71/index.html">
+<meta property="og:title" content="线段树标记下传模板">
+<meta property="og:url" content="http://hexo.patina27.net/2016/04/30/70/index.html">
 <meta property="og:site_name" content="Neologism">
-<meta property="og:description" content="复习一下分数规划。">
-<meta property="og:updated_time" content="2016-04-29T14:34:58.352Z">
+<meta property="og:description" content="本身像我这么懒的人是不会去打lazyTag线段树的。。。但是今天模拟赛的时候看错题了。。。  以为要打线段树然后就把刘书翻出来再看一遍。。。">
+<meta property="og:updated_time" content="2016-04-30T15:28:13.605Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Poj2976 Dropping tests 普通的0/1分数规划">
-<meta name="twitter:description" content="复习一下分数规划。">
+<meta name="twitter:title" content="线段树标记下传模板">
+<meta name="twitter:description" content="本身像我这么懒的人是不会去打lazyTag线段树的。。。但是今天模拟赛的时候看错题了。。。  以为要打线段树然后就把刘书翻出来再看一遍。。。">
 
 
 
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title> Poj2976 Dropping tests 普通的0/1分数规划 | Neologism </title>
+  <title> 线段树标记下传模板 | Neologism </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -211,7 +211,7 @@
             
             
               
-                Poj2976 Dropping tests 普通的0/1分数规划
+                线段树标记下传模板
               
             
           </h1>
@@ -223,8 +223,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-26T16:19:32+08:00" content="2016-04-26">
-              2016-04-26
+            <time itemprop="dateCreated" datetime="2016-04-30T23:27:10+08:00" content="2016-04-30">
+              2016-04-30
             </time>
           </span>
 
@@ -234,8 +234,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/26/71/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/26/71/" itemprop="commentsCount"></span>
+                <a href="/2016/04/30/70/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/30/70/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -258,11 +258,8 @@
       
 
       
-        <p>复习一下分数规划。<br><a id="more"></a></p>
-<h2 id="01分数规划问题"><a href="#01分数规划问题" class="headerlink" title="01分数规划问题"></a>01分数规划问题</h2><p>所谓的01分数规划问题就是指这样的一类问题，给定两个数组，a[i]表示选取i的收益，b[i]表示选取i的代价。如果选取i，定义x[i]=1否则x[i]=0。每一个物品只有选或者不选两种方案，求一个选择方案使得$R =\frac{ \sum a_i * x_i }{ \sum b_i * x_i } $取得最值，即所有选择物品的总收益/总代价的值最大或是最小。</p>
-<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>对 $$R =\frac{ \sum a_i * x_i }{ \sum b_i * x_i } $$ 变形<br>得到等式 $$0 = \sum a_i*x_i - R * \sum b_i*x_i$$<br>令函数$$f(L) = \sum a_i*x_i - L * \sum b_i*x_i$$<br>整理得到$$f(L) = \sum (a_i - L * b_i) * x_i $$<br>显然$a_i - L * b_i$随L单调递减<br>若存在一种x数组的方案使$f(L) &gt; 0$，则：<br>$$\sum a_i*x_i - L * \sum b_i*x_i &gt; 0$$<br>即<br>$$\frac{ \sum a_i * x_i }{ \sum b_i * x_i } &gt; L$$<br>即 R &gt; L ， 存在更优解<br>当 f(L) = 0 时 R = L<br>当 f(L) &lt; 0 时 无意义</p>
-<h2 id="Dinkelbash算法"><a href="#Dinkelbash算法" class="headerlink" title="Dinkelbash算法"></a>Dinkelbash算法</h2><p>直接贴代码<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 1001</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Eps 1e-6</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Data&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    <span class="keyword">float</span> d;</span><br><span class="line">&#125;da[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Data a, Data b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a.d &gt; b.d) return <span class="literal">true</span>;</span><br><span class="line">    return <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">freopen(<span class="string">""</span><span class="number">1.</span>in<span class="string">""</span>, <span class="string">""</span>r<span class="string">""</span>, <span class="built_in">stdin</span>);</span><br><span class="line">freopen(<span class="string">""</span><span class="number">1.</span>out<span class="string">""</span>, <span class="string">""</span>w<span class="string">""</span>, <span class="built_in">stdout</span>);</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">""</span>%d%d<span class="string">""</span>, &amp;n, &amp;m);</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span> &amp;&amp; m == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        <span class="built_in">memset</span>(da, <span class="number">0</span>, <span class="keyword">sizeof</span> da);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">""</span>%d<span class="string">""</span>, &amp;da[i].a);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">""</span>%d<span class="string">""</span>, &amp;da[i].b);</span><br><span class="line">        <span class="comment">//Dinkelbash Algorithm</span></span><br><span class="line">        <span class="keyword">float</span> L = <span class="number">1</span>, Ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (<span class="built_in">abs</span>(L - Ans) &gt;=  Eps) &#123;</span><br><span class="line">            Ans = L;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">                da[i].d = (float) da[i].a - L * (float) da[i].b;</span><br><span class="line">            &#125;</span><br><span class="line">            sort(da + <span class="number">1</span>, da + <span class="number">1</span> + n, cmp);</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> p = <span class="number">0</span>, q = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= (n - m); i++)&#123;</span><br><span class="line">                p += (long long) da[i].a;</span><br><span class="line">                q += (long long) da[i].b;</span><br><span class="line">            &#125;</span><br><span class="line">            L = (float) p / (float) q;</span><br><span class="line">           <span class="comment">// cout &lt;&lt; p &lt;&lt; q &lt;&lt; endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">""</span>%<span class="number">.0</span>lf\n<span class="string">""</span>, Ans * <span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+        <p>本身像我这么懒的人是不会去打lazyTag线段树的。。。<br>但是今天模拟赛的时候看错题了。。。  以为要打线段树<br>然后就把刘书翻出来再看一遍。。。<br><a id="more"></a><br>刘书上的线段树简直不忍直视。区间加的版本根本就是错误的。。。<br>区间修改也很鸡肋。。<br>于是自己打了个模板，目测是正确的。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> segTree&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> setv[MAXN&lt;&lt;<span class="number">2</span>],sumv[MAXN&lt;&lt;<span class="number">2</span>];</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=(n&lt;&lt;<span class="number">2</span>);i++) setv[i]=<span class="number">-1</span>;</span><br><span class="line">		<span class="built_in">memset</span>(sumv,<span class="number">0</span>,<span class="keyword">sizeof</span> sumv);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">maintain</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (setv[o]&gt;=<span class="number">0</span>) sumv[o]=setv[o]*(r-l+<span class="number">1</span>); <span class="keyword">else</span> </span><br><span class="line">		<span class="keyword">if</span> (l&lt;r) sumv[o]=sumv[lc]+sumv[rc];</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">pushdown</span><span class="params">(<span class="keyword">int</span> o)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (setv[o]&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">			setv[lc]=setv[rc]=setv[o];</span><br><span class="line">			setv[o]=<span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> o, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> tl, <span class="keyword">int</span> tr, <span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (tl&lt;=l &amp;&amp; r&lt;=tr)&#123;</span><br><span class="line">			setv[o]=v;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			pushdown(o);</span><br><span class="line">			<span class="keyword">if</span> (tl&lt;=mid) update(lc,l,mid,tl,tr,v); <span class="keyword">else</span> maintain(lc,l,mid);</span><br><span class="line">			<span class="keyword">if</span> (tr&gt;mid) update(rc,mid+<span class="number">1</span>,r,tl,tr,v); <span class="keyword">else</span> maintain(rc,mid+<span class="number">1</span>,r);		</span><br><span class="line">		&#125;	</span><br><span class="line">		maintain(o,l,r);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> o, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> tl, <span class="keyword">int</span> tr)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (tl&lt;=l &amp;&amp; r&lt;=tr)	&#123;</span><br><span class="line">			maintain(o,l,r);</span><br><span class="line">			return sumv[o];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> ret=<span class="number">0</span>;</span><br><span class="line">		pushdown(o);</span><br><span class="line">		<span class="keyword">if</span> (tl&lt;=mid) ret+=query(lc,l,mid,tl,tr); <span class="keyword">else</span> maintain(lc,l,mid);</span><br><span class="line">		<span class="keyword">if</span> (tr&gt;mid) ret+=query(rc,mid+<span class="number">1</span>,r,tl,tr); <span class="keyword">else</span> maintain(rc,mid+<span class="number">1</span>,r);</span><br><span class="line">		maintain(o,l,r);</span><br><span class="line">		return ret;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -282,9 +279,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/oi/" rel="tag">#oi</a>
+            <a href="/tags/OI/" rel="tag">#OI</a>
           
-            <a href="/tags/01分数规划/" rel="tag">#01分数规划</a>
+            <a href="/tags/线段树/" rel="tag">#线段树</a>
           
         </div>
       
@@ -293,17 +290,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/25/bzoj2705/" rel="next" title="bzoj2705 Pillai函数">
-                <i class="fa fa-chevron-left"></i> bzoj2705 Pillai函数
+              <a href="/2016/04/26/71/" rel="next" title="Poj2976 Dropping tests 普通的0/1分数规划">
+                <i class="fa fa-chevron-left"></i> Poj2976 Dropping tests 普通的0/1分数规划
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/30/70/" rel="prev" title="线段树标记下传模板">
-                线段树标记下传模板 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -455,7 +448,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#01分数规划问题"><span class="nav-number">1.</span> <span class="nav-text">01分数规划问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法"><span class="nav-number">2.</span> <span class="nav-text">解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dinkelbash算法"><span class="nav-number">3.</span> <span class="nav-text">Dinkelbash算法</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
@@ -582,9 +575,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'patina27hexo';
-      var disqus_identifier = '2016/04/26/71/';
-      var disqus_title = 'Poj2976 Dropping tests 普通的0/1分数规划';
-      var disqus_url = 'http://hexo.patina27.net/2016/04/26/71/';
+      var disqus_identifier = '2016/04/30/70/';
+      var disqus_title = '线段树标记下传模板';
+      var disqus_url = 'http://hexo.patina27.net/2016/04/30/70/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
