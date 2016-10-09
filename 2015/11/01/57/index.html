@@ -1,0 +1,674 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="OI,DP,玄学," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="题目本身是好题
+题目描述 Description学校科技楼一共有N层,而神犇YJQ每天都在科技楼N楼的机房写代码。这天,他准备从科技楼1楼爬到N楼。有个M连接不同楼层的楼梯,爬每个楼梯需要一定的体力值。楼梯一定是从低处通往高处的。(但是由于楼房的设计比较奇怪,第i楼并不一定在第i-1楼上面,也就是说给出的边不保证x&amp;lt;y,但保证图为DAG,请自行处理楼层之间的高度关系)。为了省时间,YJQ一定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[codevs4438] YJQ Runs Upstairs #patina27大战玄学#">
+<meta property="og:url" content="http://hexo.patina27.net/2015/11/01/57/index.html">
+<meta property="og:site_name" content="Neologism">
+<meta property="og:description" content="题目本身是好题
+题目描述 Description学校科技楼一共有N层,而神犇YJQ每天都在科技楼N楼的机房写代码。这天,他准备从科技楼1楼爬到N楼。有个M连接不同楼层的楼梯,爬每个楼梯需要一定的体力值。楼梯一定是从低处通往高处的。(但是由于楼房的设计比较奇怪,第i楼并不一定在第i-1楼上面,也就是说给出的边不保证x&amp;lt;y,但保证图为DAG,请自行处理楼层之间的高度关系)。为了省时间,YJQ一定">
+<meta property="og:updated_time" content="2016-10-09T16:16:25.904Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[codevs4438] YJQ Runs Upstairs #patina27大战玄学#">
+<meta name="twitter:description" content="题目本身是好题
+题目描述 Description学校科技楼一共有N层,而神犇YJQ每天都在科技楼N楼的机房写代码。这天,他准备从科技楼1楼爬到N楼。有个M连接不同楼层的楼梯,爬每个楼梯需要一定的体力值。楼梯一定是从低处通往高处的。(但是由于楼房的设计比较奇怪,第i楼并不一定在第i-1楼上面,也就是说给出的边不保证x&amp;lt;y,但保证图为DAG,请自行处理楼层之间的高度关系)。为了省时间,YJQ一定">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> [codevs4438] YJQ Runs Upstairs #patina27大战玄学# | Neologism </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Neologism</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Hexo @ Patina27</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [codevs4438] YJQ Runs Upstairs #patina27大战玄学#
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-01T22:22:10+08:00" content="2015-11-01">
+              2015-11-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/01/57/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/11/01/57/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>题目本身是好题</p>
+<h2 id="题目描述-Description"><a href="#题目描述-Description" class="headerlink" title="题目描述 Description"></a>题目描述 Description</h2><p>学校科技楼一共有N层,而神犇YJQ每天都在科技楼N楼的机房写代码。这天,他准备从科技楼1楼爬到N楼。有个M连接不同楼层的楼梯,爬每个楼梯需要一定的体力值。楼梯一定是从低处通往高处的。(但是由于楼房的设计比较奇怪,第i楼并不一定在第i-1楼上面,也就是说给出的边不保证x&lt;y,但保证图为DAG,请自行处理楼层之间的高度关系)。为了省时间,YJQ一定只会上楼梯而不会下楼梯,即楼梯间不会形成环路。而且出于人性化考虑,不管YJQ选择什么路线上楼,他爬的楼梯数量一定小于20。为了使体力消耗尽量平稳,YJQ需要选择一条“每个楼梯消耗体力值的方差最小”的路径上楼。请帮助YJQ计算出这个最小方差。</p>
+<h2 id="输入描述-Input-Description"><a href="#输入描述-Input-Description" class="headerlink" title="输入描述 Input Description"></a>输入描述 Input Description</h2><p>第一行包含2个整数N,M表示科技楼楼层数和楼梯数; 接下来M行,每行3个数,x,y,z表示存在一条由x层通往平台y层的楼梯,爬这个楼梯需要消耗z的体力值。</p>
+<h2 id="输出描述-Output-Description"><a href="#输出描述-Output-Description" class="headerlink" title="输出描述 Output Description"></a>输出描述 Output Description</h2><p>一行1个实数,表示最小方差,精确到小数点后4位。</p>
+<h2 id="样例输入-Sample-Input"><a href="#样例输入-Sample-Input" class="headerlink" title="样例输入 Sample Input"></a>样例输入 Sample Input</h2><p>4 4 1 2 1 2 4 3 1 3 2 3 4 3</p>
+<h2 id="样例输出-Sample-Output"><a href="#样例输出-Sample-Output" class="headerlink" title="样例输出 Sample Output"></a>样例输出 Sample Output</h2><p>0.2500</p>
+<h2 id="数据范围及提示-Data-Size-amp-Hint"><a href="#数据范围及提示-Data-Size-amp-Hint" class="headerlink" title="数据范围及提示 Data Size &amp; Hint"></a>数据范围及提示 Data Size &amp; Hint</h2><p>对于30%的数据,N&lt;=10,M&lt;=20;<br>另有20%的数据N&lt;=35,M&lt;=220,Z∈0,1;<br>对于100%的数据2&lt;=N&lt;=50,M&lt;=300,0&lt;=Z&lt;=50保证至少存在一条由1到N的路径。  </p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>我们考虑方差的计算公式<br>(图丢了QAQ)<br>所以我们可以考虑动态规划,dp[i][j][k]表示走到i号点，走了j条边并且边权和为k的最小边权平方和，最终的答案是走到i号点时枚举一下走了多少条边与边权和为多少，并以此计算答案。可以证明最小方差一定在所有的状态之中<br>    复杂度：O(20<em>20</em>50*M)(20是最大边数，50是每条边的最大权值)</p>
+<p>这个处理方差的做法是可以推广的</p>
+<p>实际是绝对方差值的有三个因素   </p>
+<ol>
+<li>元素个数</li>
+<li>元素和</li>
+<li>元素平方和</li>
+</ol>
+<p>本题的思想就是控制其中的两个变量，另剩余的一个变量最小。</p>
+<p>经过美化后的代码<del>（visual studio最强功能  ctrl+k,ctrl+d 格式化代码）</del><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXM 300+1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 1000000000</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 50+1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXdep 20+1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> min(a,b) (a&gt;b)?b:a</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">struct</span> Data &#123;</span><br><span class="line">	<span class="keyword">int</span> v, w, nex;</span><br><span class="line">&#125; data[MAXM]; <span class="keyword">int</span> fir[MAXN];</span><br><span class="line"><span class="keyword">int</span> e = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span> </span>&#123;</span><br><span class="line">	data[++e].v = y;</span><br><span class="line">	data[e].w = z;</span><br><span class="line">	data[e].nex = fir[x];</span><br><span class="line">	fir[x] = e;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> q[<span class="number">10000</span>], h = <span class="number">0</span>, t = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> U[MAXN], cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> inq[MAXN];</span><br><span class="line"><span class="keyword">int</span> f[MAXN][MAXdep][<span class="number">50</span> * MAXM];</span><br><span class="line"><span class="keyword">int</span> n, m, sum = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">topo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(f, <span class="number">127</span>, <span class="keyword">sizeof</span> f);</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> inf = f[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">	f[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="keyword">if</span> (!inq[i]) q[++t] = i;</span><br><span class="line">	<span class="keyword">while</span> (h &lt; t) &#123;</span><br><span class="line">		<span class="keyword">int</span> u = q[++h];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">20</span>; j++)</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt;= sum; k++)</span><br><span class="line">				<span class="keyword">if</span> (f[u][j][k] != inf)</span><br><span class="line">					<span class="keyword">for</span> (<span class="keyword">int</span> p = fir[u]; p &gt; <span class="number">0</span>; p = data[p].nex) &#123;</span><br><span class="line">						<span class="keyword">int</span> v = data[p].v, w = data[p].w;</span><br><span class="line">						<span class="keyword">if</span> (j + <span class="number">1</span> &lt;= <span class="number">20</span> &amp;&amp; w + k &lt;= sum)</span><br><span class="line">							f[v][j + <span class="number">1</span>][w + k] = min(f[v][j + <span class="number">1</span>][w + k], f[u][j][k] + w*w);</span><br><span class="line">					&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = fir[u]; i; i = data[i].nex) &#123;</span><br><span class="line">			<span class="keyword">int</span> v = data[i].v;</span><br><span class="line">			<span class="keyword">if</span> (!--inq[v])</span><br><span class="line">				q[++t] = v;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	freopen(<span class="string">""</span><span class="number">1.</span>in<span class="string">""</span>, <span class="string">""</span>r<span class="string">""</span>, <span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">""</span><span class="number">1.</span>out<span class="string">""</span>, <span class="string">""</span>w<span class="string">""</span>, <span class="built_in">stdout</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">""</span>%d%d<span class="string">""</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> x, y, z;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">""</span>%d%d%d<span class="string">""</span>, &amp;x, &amp;y, &amp;z);</span><br><span class="line">		addedge(x, y, z);</span><br><span class="line">		inq[y]++;</span><br><span class="line">		sum += z;</span><br><span class="line">	&#125;</span><br><span class="line">	topo();</span><br><span class="line">	<span class="keyword">double</span> ans = INF;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">20</span>; j++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt;= sum; k++)</span><br><span class="line">			ans = min(ans, ((double)f[n][j][k] / (double)j) - (double)(k*k) / (double)(j*j));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">""</span>%<span class="number">.4</span>f<span class="string">""</span>, ans);</span><br><span class="line">	fclose(<span class="built_in">stdin</span>); fclose(<span class="built_in">stdout</span>);</span><br><span class="line">	return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="My-Story"><a href="#My-Story" class="headerlink" title="My Story"></a>My Story</h2><ol>
+<li>一开始maxn写成40了orz</li>
+<li>发现maxm也写错了</li>
+<li>改了还不对</li>
+<li>发现输出有负数。。。。</li>
+<li>猛然发现需要拓扑排序。。。</li>
+<li>拓扑完还错</li>
+<li>拓扑打错了 应该一开始把所有入度为0的都入队，支线也会对主线有影响</li>
+<li>还是错</li>
+<li>无奈造数据。。</li>
+<li>数据造太差 人工调</li>
+<li>发现负数</li>
+<li>调试的时候发现当程序吧数组的某一个值赋值时，数组中的别的元素居然有干扰。。。<br>举个例子  赋值f[5][1][10]=100后， f[5][0][810]的值也变成了100</li>
+<li>对此玄学陷入深深的惶恐。。。</li>
+<li>发现如果不用宏定义就好了 即int f[maxn][maxn][maxm*50] 改成普通形式</li>
+<li>ac了</li>
+<li>发现用宏定义只要数组不开大也没事。</li>
+<li>得出结论c++果然是玄学</li>
+<li>教训：以后数组千万别乱开啊啊啊</li>
+</ol>
+<p>“</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OI/" rel="tag">#OI</a>
+          
+            <a href="/tags/DP/" rel="tag">#DP</a>
+          
+            <a href="/tags/玄学/" rel="tag">#玄学</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/31/56/" rel="next" title="[poj 2479]Maximum sum">
+                <i class="fa fa-chevron-left"></i> [poj 2479]Maximum sum
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/01/58/" rel="prev" title="BZOJ4300: 绝世好题">
+                BZOJ4300: 绝世好题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Patina27" />
+          <p class="site-author-name" itemprop="name">Patina27</p>
+          <p class="site-description motion-element" itemprop="description">Cease to struggle and you cease to live.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iissnan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/patinagold" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element">
+            <div class="links-of-blogroll-title">
+              <i class="fa fa-globe fa-fw"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://i301void.tk/" title="i301void" target="_blank">i301void</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.fractal128.tk/" title="fractal128" target="_blank">fractal128</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述-Description"><span class="nav-number">1.</span> <span class="nav-text">题目描述 Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入描述-Input-Description"><span class="nav-number">2.</span> <span class="nav-text">输入描述 Input Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出描述-Output-Description"><span class="nav-number">3.</span> <span class="nav-text">输出描述 Output Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输入-Sample-Input"><span class="nav-number">4.</span> <span class="nav-text">样例输入 Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输出-Sample-Output"><span class="nav-number">5.</span> <span class="nav-text">样例输出 Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据范围及提示-Data-Size-amp-Hint"><span class="nav-number">6.</span> <span class="nav-text">数据范围及提示 Data Size & Hint</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">7.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#My-Story"><span class="nav-number">8.</span> <span class="nav-text">My Story</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Patina27</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'patina27hexo';
+      var disqus_identifier = '2015/11/01/57/';
+      var disqus_title = '[codevs4438] YJQ Runs Upstairs #patina27大战玄学#';
+      var disqus_url = 'http://hexo.patina27.net/2015/11/01/57/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

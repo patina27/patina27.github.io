@@ -1,0 +1,652 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="OI,搜索," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Time Limit: 2000MS        Memory Limit: 65536KTotal Submissions: 3695        Accepted: 1153
+DescriptionAcm, a treasure-explorer, is exploring again. This time he is in a special maze, in which there a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="poj 2157 Maze">
+<meta property="og:url" content="http://hexo.patina27.net/2015/11/02/59/index.html">
+<meta property="og:site_name" content="Neologism">
+<meta property="og:description" content="Time Limit: 2000MS        Memory Limit: 65536KTotal Submissions: 3695        Accepted: 1153
+DescriptionAcm, a treasure-explorer, is exploring again. This time he is in a special maze, in which there a">
+<meta property="og:updated_time" content="2016-10-09T16:06:32.668Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="poj 2157 Maze">
+<meta name="twitter:description" content="Time Limit: 2000MS        Memory Limit: 65536KTotal Submissions: 3695        Accepted: 1153
+DescriptionAcm, a treasure-explorer, is exploring again. This time he is in a special maze, in which there a">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> poj 2157 Maze | Neologism </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Neologism</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Hexo @ Patina27</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                poj 2157 Maze
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-02T22:22:10+08:00" content="2015-11-02">
+              2015-11-02
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/02/59/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/11/02/59/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Time Limit: 2000MS        Memory Limit: 65536K<br>Total Submissions: 3695        Accepted: 1153</p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Acm, a treasure-explorer, is exploring again. This time he is in a special maze, in which there are some doors (at most 5 doors, represented by ‘A’, ‘B’, ‘C’, ‘D’, ‘E’ respectively). In order to find the treasure, Acm may need to open doors. However, to open a door he needs to find all the door’s keys (at least one) in the maze first. For example, if there are 3 keys of Door A, to open the door he should find all the 3 keys first (that’s three ‘a’s which denote the keys of ‘A’ in the maze). Now make a program to tell Acm whether he can find the treasure or not. Notice that Acm can only go up, down, left and right in the maze.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The input consists of multiple test cases. The first line of each test case contains two integers M and N (1 &lt; N, M &lt; 20), which denote the size of the maze. The next M lines give the maze layout, with each line containing N characters. A character is one of the following: ‘X’ (a block of wall, which the explorer cannot enter), ‘.’ (an empty block), ‘S’ (the start point of Acm), ‘G’ (the position of treasure), ‘A’, ‘B’, ‘C’, ‘D’, ‘E’ (the doors), ‘a’, ‘b’, ‘c’, ‘d’, ‘e’ (the keys of the doors). The input is terminated with two 0’s. This test case should not be processed.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, in one line output “”YES”” if Acm can find the treasure, or “”NO”” otherwise.</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>4 4<br>S.X.<br>a.X.<br>..XG<br>….<br>3 4<br>S.Xa<br>.aXB<br>b.AG<br>0 0</p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>YES<br>NO</p>
+<h2 id="Sol"><a href="#Sol" class="headerlink" title="Sol"></a>Sol</h2><p>这题的标签是搜索。。。</p>
+<p>哦</p>
+<p>我写了个大暴力dfs</p>
+<p>跪了</p>
+<p>也许是爆栈了？</p>
+<p>改成bfs</p>
+<p>tle。。。</p>
+<p>。。。</p>
+<p>大暴力明显会tle啊！！！</p>
+<p>这题的bfs是在每一个小房间floodfill找钥匙看看能不能进下一个小房间。。</p>
+<p>又刷出智商下限。</p>
+<p>日狗了 提交了这么多次还没A<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> dir[<span class="number">4</span>][<span class="number">2</span>]=&#123;&#123;<span class="number">0</span>,<span class="number">1</span>&#125;,&#123;<span class="number">0</span>,<span class="number">-1</span>&#125;,&#123;<span class="number">1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">-1</span>,<span class="number">0</span>&#125;&#125;;</span><br><span class="line"><span class="keyword">char</span> ch[<span class="number">201</span>][<span class="number">201</span>];</span><br><span class="line"><span class="keyword">bool</span> bo[<span class="number">201</span>][<span class="number">201</span>];</span><br><span class="line"><span class="keyword">int</span> num[<span class="number">50</span>],carry[<span class="number">50</span>];</span><br><span class="line"><span class="keyword">bool</span> fin;</span><br><span class="line"><span class="keyword">int</span> m,n;</span><br><span class="line"><span class="keyword">int</span> X;</span><br><span class="line"><span class="keyword">struct</span> data&#123;</span><br><span class="line">	<span class="keyword">int</span> x,y;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">queue</span> &lt;data&gt; q;</span><br><span class="line"><span class="built_in">queue</span> &lt;data&gt; door;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	data tmp;</span><br><span class="line">	tmp.x=x;tmp.y=y;</span><br><span class="line">	bo[x][y] = <span class="literal">true</span>;</span><br><span class="line">	q.push(tmp);</span><br><span class="line">	<span class="keyword">while</span> (!q.empty())&#123;</span><br><span class="line">		<span class="keyword">while</span> (!q.empty())&#123;</span><br><span class="line">		tmp=q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		x=tmp.x;</span><br><span class="line">		y=tmp.y;</span><br><span class="line">		<span class="comment">// cout &lt;&lt; ""##"" &lt;&lt; endl;</span></span><br><span class="line">		<span class="comment">// cout &lt;&lt; x &lt;&lt; y &lt;&lt; endl;</span></span><br><span class="line">		<span class="comment">// cout &lt;&lt; tmp.carry[0] &lt;&lt; endl;</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> d=<span class="number">0</span>;d&lt;<span class="number">4</span>;d++)&#123;</span><br><span class="line">			<span class="keyword">int</span> nx=dir[d][<span class="number">0</span>]+x;</span><br><span class="line">			<span class="keyword">int</span> ny=dir[d][<span class="number">1</span>]+y;</span><br><span class="line">			<span class="keyword">if</span> (<span class="number">0</span>&lt;=nx &amp;&amp; nx&lt;m &amp;&amp; <span class="number">0</span>&lt;=ny &amp;&amp; ny&lt;n &amp;&amp; ch[nx][ny]!=<span class="string">'X'</span> &amp;&amp; !bo[nx][ny])&#123;</span><br><span class="line">				<span class="keyword">if</span> (ch[nx][ny]&gt;=<span class="string">'A'</span> &amp;&amp; ch[nx][ny]&lt;=<span class="string">'E'</span>) &#123;</span><br><span class="line">					bo[nx][ny]=<span class="literal">true</span>;</span><br><span class="line">					data nex;</span><br><span class="line">					nex.x=nx;nex.y=ny;</span><br><span class="line">					door.push(nex);</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">if</span> (ch[nx][ny]==<span class="string">'G'</span>)&#123;</span><br><span class="line">						fin=<span class="literal">true</span>;</span><br><span class="line">						return;</span><br><span class="line">					&#125; </span><br><span class="line">					bo[nx][ny]=<span class="literal">true</span>;</span><br><span class="line">					data nex;</span><br><span class="line">					nex.x=nx;nex.y=ny;</span><br><span class="line">					<span class="keyword">if</span> (ch[nx][ny]&gt;=<span class="string">'a'</span> &amp;&amp; ch[nx][ny]&lt;=<span class="string">'e'</span>)</span><br><span class="line">						carry[ch[nx][ny]-<span class="string">'a'</span>]++;</span><br><span class="line">					<span class="comment">//cout &lt;&lt; nx &lt;&lt; "" "" &lt;&lt; ny &lt;&lt; endl;</span></span><br><span class="line">					q.push(nex);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (q.empty())&#123;</span><br><span class="line">			<span class="keyword">int</span> siz=door.size();</span><br><span class="line">			<span class="comment">//cout&lt;&lt;siz&lt;&lt;endl;</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=siz;i++)&#123;</span><br><span class="line">				tmp=door.front();</span><br><span class="line">				door.pop();</span><br><span class="line">				<span class="comment">//cout&lt;&lt;ch[tmp.x][tmp.y]&lt;&lt;endl;</span></span><br><span class="line">				<span class="keyword">if</span> (carry[ch[tmp.x][tmp.y]-<span class="string">'A'</span>]==num[ch[tmp.x][tmp.y]-<span class="string">'A'</span>] &amp;&amp; num[ch[tmp.x][tmp.y]-<span class="string">'A'</span>]!=<span class="number">0</span>)&#123;</span><br><span class="line">					q.push(tmp);</span><br><span class="line">					<span class="comment">//cout&lt;&lt;ch[tmp.x][tmp.y]&lt;&lt;' '&lt;&lt;carry[ch[tmp.x][tmp.y]-'A']&lt;&lt;endl;</span></span><br><span class="line">				&#125; <span class="keyword">else</span> door.push(tmp);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	freopen(<span class="string">""</span><span class="number">1.</span>in<span class="string">""</span>,<span class="string">""</span>r<span class="string">""</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">""</span><span class="number">1.</span>out<span class="string">""</span>,<span class="string">""</span>w<span class="string">""</span>,<span class="built_in">stdout</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">""</span>%d%d<span class="string">""</span>,&amp;m,&amp;n);</span><br><span class="line">	<span class="keyword">while</span> (m!=<span class="number">0</span> || n!=<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">memset</span>(ch,<span class="number">0</span>,<span class="keyword">sizeof</span> ch);</span><br><span class="line">		<span class="built_in">memset</span>(num,<span class="number">0</span>,<span class="keyword">sizeof</span> num);</span><br><span class="line">		<span class="built_in">memset</span>(carry,<span class="number">0</span>,<span class="keyword">sizeof</span> carry);</span><br><span class="line">		<span class="keyword">int</span> x,y;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">""</span>%s<span class="string">""</span>,ch[i]);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (ch[i][j]==<span class="string">'S'</span>) x=i,y=j;</span><br><span class="line">				<span class="keyword">if</span> (ch[i][j]&gt;=<span class="string">'a'</span> &amp;&amp; ch[i][j]&lt;=<span class="string">'e'</span>) </span><br><span class="line">					num[ch[i][j]-<span class="string">'a'</span>]++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		fin=<span class="literal">false</span>;</span><br><span class="line">		<span class="built_in">memset</span>(bo,<span class="number">0</span>,<span class="keyword">sizeof</span> bo);</span><br><span class="line">		<span class="keyword">while</span> (!door.empty()) door.pop();</span><br><span class="line">		bo[x][y]=<span class="literal">true</span>;</span><br><span class="line">		bfs(x,y);</span><br><span class="line">		<span class="keyword">if</span> (fin) <span class="built_in">puts</span>(<span class="string">""</span>YES<span class="string">""</span>); <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">""</span>NO<span class="string">""</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">""</span>%d%d<span class="string">""</span>,&amp;m,&amp;n);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OI/" rel="tag">#OI</a>
+          
+            <a href="/tags/搜索/" rel="tag">#搜索</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/01/58/" rel="next" title="BZOJ4300: 绝世好题">
+                <i class="fa fa-chevron-left"></i> BZOJ4300: 绝世好题
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/03/60/" rel="prev" title="[poj 2348]Euclid's Game">
+                [poj 2348]Euclid's Game <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Patina27" />
+          <p class="site-author-name" itemprop="name">Patina27</p>
+          <p class="site-description motion-element" itemprop="description">Cease to struggle and you cease to live.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iissnan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/patinagold" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element">
+            <div class="links-of-blogroll-title">
+              <i class="fa fa-globe fa-fw"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://i301void.tk/" title="i301void" target="_blank">i301void</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.fractal128.tk/" title="fractal128" target="_blank">fractal128</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input"><span class="nav-number">4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output"><span class="nav-number">5.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sol"><span class="nav-number">6.</span> <span class="nav-text">Sol</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Patina27</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'patina27hexo';
+      var disqus_identifier = '2015/11/02/59/';
+      var disqus_title = 'poj 2157 Maze';
+      var disqus_url = 'http://hexo.patina27.net/2015/11/02/59/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
