@@ -38,7 +38,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="OI,水题," />
 
 
 
@@ -54,15 +54,16 @@
 
 
 
-<meta name="description" content="Cease to struggle and you cease to live.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Neologism">
-<meta property="og:url" content="http://hexo.patina27.net/tags/水题/index.html">
+<meta name="description" content="描述Farmer John’s farm was flooded in the most recent storm, a fact only aggravated by the information that his cows are deathly afraid of water. His insurance agency will only repay him, however, an am">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[OpenJudge 2405]Avoid The Lakes">
+<meta property="og:url" content="http://hexo.patina27.net/2015/11/05/62/index.html">
 <meta property="og:site_name" content="Neologism">
-<meta property="og:description" content="Cease to struggle and you cease to live.">
+<meta property="og:description" content="描述Farmer John’s farm was flooded in the most recent storm, a fact only aggravated by the information that his cows are deathly afraid of water. His insurance agency will only repay him, however, an am">
+<meta property="og:updated_time" content="2016-10-09T15:51:25.965Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Neologism">
-<meta name="twitter:description" content="Cease to struggle and you cease to live.">
+<meta name="twitter:title" content="[OpenJudge 2405]Avoid The Lakes">
+<meta name="twitter:description" content="描述Farmer John’s farm was flooded in the most recent storm, a fact only aggravated by the information that his cows are deathly afraid of water. His insurance agency will only repay him, however, an am">
 
 
 
@@ -80,7 +81,7 @@
   };
 </script>
 
-  <title> 标签: 水题 | Neologism </title>
+  <title> [OpenJudge 2405]Avoid The Lakes | Neologism </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -101,7 +102,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -189,46 +190,153 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        水题
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [OpenJudge 2405]Avoid The Lakes
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-05T22:22:10+08:00" content="2015-11-05">
+              2015-11-05
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/05/62/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/11/05/62/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
+      
+        <h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>Farmer John’s farm was flooded in the most recent storm, a fact only aggravated by the information that his cows are deathly afraid of water. His insurance agency will only repay him, however, an amount depending on the size of the largest “”lake”” on his farm.</p>
+<p>The farm is represented as a rectangular grid with N (1 &lt;= N &lt;= 100) rows and M (1 &lt;= M &lt;= 100) columns. Each cell in the grid is either dry or submerged, and exactly K (1 &lt;= K &lt;= N*M) of the cells are submerged. As one would expect, a lake has a central cell to which other cells connect by sharing a long edge (not a corner). Any cell that shares a long edge with the central cell or shares a long edge with any connected cell becomes a connected cell and is part of the lake.</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><ul>
+<li><p>Line 1: Three space-separated integers: N, M, and K</p>
+</li>
+<li><p>Lines 2..K+1: Line i+1 describes one submerged location with two space separated integers that are its row and column: R and C</p>
+</li>
+</ul>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><ul>
+<li>Line 1: The number of cells that the largest lake contains.</li>
+</ul>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><p>3 4 5<br>3 2<br>2 2<br>3 1<br>2 3<br>1 1</p>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><p>4</p>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>INPUT DETAILS:</p>
+<p>The farm is a grid with three rows and four columns; five of the cells are submerged. They are located in the positions (row 3, column 2); (row 2, column 2); (row 3, column 1); (row 2, column 3); (row 1, column 1):</p>
+<pre><code># . . .
+. # # .
+# # . .
+</code></pre><p>OUTPUT DETAILS:</p>
+<p>The largest lake consists of the input’s first four cells.</p>
+<h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><p>USACO November 2007 Bronze</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码丢了。。。。</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div>
+      
         
-            <a class="post-title-link" href="/2015/11/05/62/" itemprop="url">
-              
-                <span itemprop="name">[OpenJudge 2405]Avoid The Lakes</span>
-              
-            </a>
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+      
+    </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-11-05T22:22:10+08:00"
-              content="2015-11-05" >
-          11-05
-        </time>
-      </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OI/" rel="tag">#OI</a>
+          
+            <a href="/tags/水题/" rel="tag">#水题</a>
+          
+        </div>
+      
 
-    </header>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/04/61/" rel="next" title="[NOIP2015神奇五校模拟赛No.7]设置(settings)">
+                <i class="fa fa-chevron-left"></i> [NOIP2015神奇五校模拟赛No.7]设置(settings)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/06/64/" rel="prev" title="[poj 2762]Going from u to v or from v to u?">
+                [poj 2762]Going from u to v or from v to u? <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -236,6 +344,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -255,8 +374,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -337,6 +465,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输入"><span class="nav-number">4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输出"><span class="nav-number">5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提示"><span class="nav-number">6.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#来源"><span class="nav-number">7.</span> <span class="nav-text">来源</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -440,6 +579,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
@@ -456,9 +599,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'patina27hexo';
-      var disqus_identifier = 'tags/水题/index.html';
-      var disqus_title = '';
-      var disqus_url = '';
+      var disqus_identifier = '2015/11/05/62/';
+      var disqus_title = '[OpenJudge 2405]Avoid The Lakes';
+      var disqus_url = 'http://hexo.patina27.net/2015/11/05/62/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -469,6 +612,8 @@
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   
